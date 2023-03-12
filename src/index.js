@@ -13,3 +13,4 @@ root.render(
     </BrowserRouter>
 );
 
+//import {BrowserRouter, Route, Routes} from "react-router-dom"; - ворнинги на роут роутс
