@@ -1,0 +1,5 @@
+export const homePage = 'Home'
+export const signUp = 'SignUp'
+export const joinOurTeam = 'JoinOurTeam'
+export const book = 'Book'
+export const registration = 'registration'
