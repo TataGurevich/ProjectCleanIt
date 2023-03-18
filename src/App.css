@@ -1,21 +1,36 @@
+@font-face {
+  font-family:MyReleway ;
+  src: url('fonts/Raleway-Regular.ttf');
+}
+@font-face {
+  font-family:MyRelewayBold ;
+  src: url('fonts/Raleway-Bold.ttf');
+}
+@font-face {
+  font-family:MyRelewayMedium ;
+  src: url('fonts/Raleway-Medium.ttf');
+}
+@font-face {
+  font-family: Noto;
+  src: url("fonts/NotoSansLepcha-Regular.ttf");
+}
 body {
   margin: 0;
   padding: 0;
   background: #f4f5f7;
-  width: 100%;
+  width: 1366px;
+  font-family: MyRelewayMedium;
+
 }
 
 .upSection {
   height: 768px;
-  /*background: transparent linear-gradient(90deg, #f4f5f7 0%, #6781EF 100%) 0% 0% no-repeat padding-box;*/
   background-image: url("img/path1.png");
   background-repeat: no-repeat;
   background-position: top right;
 
 }
 .nav {
-  /*position: fixed;*/
-  /*top: 0; left: 0;*/
   padding-top: 20px;
   height: 75px;
   display: flex;
@@ -25,46 +40,60 @@ body {
 }
 .nav div {
   margin-left: 131px;
+  margin-right: 400px;
 }
 .nav ul {
   display: flex;
   flex-direction: row;
   list-style: none;
   align-items: center;
+  flex-wrap: nowrap;
+  padding: 0;
 }
 .nav li {
-  margin-right: 32px;
   margin-left: 32px;
-  font-size: 20px;
+}
+.nav a{
   color: #593D3D;
   text-decoration: none;
-  font-family: Raleway ;
+  font-family: MyReleway ;
+  font-size: 18px;
+  font-weight: bold;
 }
-/*i dont know why but ne primenyatsa color and text-decoration to li. i tried a lot of types but IDK T_T*/
-.nav button {
+#SingUp {
   width: 106px;
   height: 47px;
+  margin-left: 30px;
   margin-right: 139px;
-  margin-left: 61px;
   border-radius: 30px;
   border: 3px solid #FFFFFF;
   font-size: 21px;
-  color: #FFFFFF;
   background: none;
 }
-.description img{
-  margin-left: 86px;
+#SingUp a{
+  color: #FFFFFF;
 }
+
 .description {
-  margin: 117px 139px;
+  /*margin: 117px 139px;*/
+  margin-top: 63px;
+  margin-right: 82px;
+  margin-left: 139px;
+  margin-bottom: 55px;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
+.description img{
+   margin-left: 86px;
+ }
 .description p {
   margin: 0;
   padding: 0;
+  font-family: MyRelewayMedium;
 }
-.description #always_clean {
+#always_clean {
+  font-weight: bold;
   width: 304px;
   height: 57px;
   color: #FFD836;
@@ -74,21 +103,21 @@ body {
   width: 410px;
   height: 57px;
   color: #6882EF;
-  font: normal normal bold 49px/57px Raleway;
+  font-size: 49px;
   letter-spacing: 0px;
   margin-bottom: 21px;
-
+  font-weight:bold ;
 }
+
 #mainPart div {
   width: 374px;
-  /*height: 141px;*/
   color: #593D3D;
   text-align: left;
   font-size: 14px;
-  font-family: Raleway;
   letter-spacing: 0px;
-
+  margin: 0;
 }
+
 #book_now{
   margin-top: 100px;
   width: 220px;

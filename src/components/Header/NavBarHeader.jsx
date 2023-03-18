@@ -26,9 +26,12 @@ const NavBarHeader = () => {
                             <Link to={joinOurTeam}>Join our team</Link>
                         </li>
                         <li>
-                            <Link to={signUp}>
-                                <button>SignUp</button>
-                            </Link>
+                            {/*<Link to={signUp}>*/}
+                            {/*    <button> SignUp</button>*/}
+                            {/*</Link>*/}
+
+                                <button id={"SingUp"}> <Link to={signUp}>SignUp</Link></button>
+
                         </li>
                     </ul>
                 </nav>
