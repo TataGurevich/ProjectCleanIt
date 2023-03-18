@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.bookNow{
+    height: 630px;
+    display: flex;
+    flex-direction: row;
+    background: #6882EF ;
+}
+.cleanSection{
+    margin-left: 139px;
+}
+.cleanSection>h1{
+    width: 231px;
+    height: 57px;
+    margin-right: 996px;
+    margin-top: 32px;
+    font-size: 49px;
+    color: #FFFFFF;
+}
+.cleanSection>button{
+    width: 304px;
+    height: 57px;
+    margin-top: 22px;
+    border: 3px solid #F9D859;
+    background: none;
+    color: #F9D859;
+    font-size: 24px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.bookNow p{
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-top: 33px;
+
+}
+.calendar{
+    max-width: 492px;
+    max-height: 351px;
+    margin-top: 11px;
+    border-radius: 16px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.calendar>h1{
+    width: 108px;
+    height: 24px;
+    margin-bottom: 25px;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+.dataZone{
+    width: 431px;
+    height: 248px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+#weeks{
+    width: 325px;
+}
+.calendar button{
+    width: 34px;
+    height: 248px;
+    border-radius: 16px;
+    background: #6781EF;
+    border: none;
+}
