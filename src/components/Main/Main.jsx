@@ -9,6 +9,7 @@ const Main = () => {
             <NavBar/>
             <Content/>
             <BookNow/>
+
         </div>
     );
 };

@@ -10,6 +10,7 @@
 }
 .cleanSection{
     margin-left: 139px;
+    width: 492px;
 }
 .cleanSection>h1{
     width: 231px;
@@ -74,4 +75,30 @@
     border-radius: 16px;
     background: #6781EF;
     border: none;
+}
+.peopleSection{
+    width: 536px;
+    margin-left: 60px;
+}
+.peopleSection p {
+    width: 225px;
+    height: 16px;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-top: 81px;
+}
+.peoples{
+    width: 536px;
+    height: 468px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    margin-top: 14px;
+    padding: 21px;
+
+}
+.card{
+    width: 495px;
+    height: 97px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
 }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import style from './BookNow.module.css';
+
 class BookNow extends Component {
     render() {
         return (
@@ -17,10 +18,14 @@ class BookNow extends Component {
                             </div>
                             <button></button>
                         </div>
-
                     </div>
                 </div>
-                <div className={'peopleSection'}>
+                <div className={style.peopleSection}>
+                    <p>Choose available expert and time:</p>
+                    <div className={style.peoples}>
+                    {/*    тут надо сделать массив с карточками людей*/}
+                    {/*я начала делать для этого css .card{}*/}
+                    </div>
 
                 </div>
             </div>
