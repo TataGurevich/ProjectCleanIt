@@ -1,6 +1,6 @@
-.triangle3 {
+.triangle4 {
     position: absolute;
-    margin-left: 810px;
+    margin-left: 1150px;
     width: 0;
     height: 0;
     border-left: 26px solid transparent;
@@ -9,31 +9,32 @@
     margin-top: -131px;
 }
 
-.gradient03 {
+.gradient04 {
     position: absolute;
-    right: 0;
+    right:0;
     margin-top: -85px;
 
-    /*width: 500px;*/
+    /*width: 800px;*/
     /*height: 100px;*/
     overflow: hidden;
+
 }
-.vac_clean3 {
-    position: relative;
+
+.vac_clean4 {
     margin-top: 98px;
     margin-left: 250px;
     width: 322px;
-    height: 398px;
+    height: 460px;
     background: transparent 0 0 no-repeat padding-box;
 
 }
-.description5 {
+.description6 {
     position: absolute;
     display: inline;
     margin-left: 105px;
     margin-top: -10px;
 }
-.oc {
+.ws {
     width: 227px;
     height: 57px;
     text-align: left;
@@ -44,10 +45,11 @@
 
 }
 
-.desc8 {
+.desc10 {
     margin-top: 31px;
     width: 437px;
     height: 43px;
+
     text-align: left;
     line-height: 21px;
     font-weight: normal;
@@ -59,7 +61,7 @@
     color: #6882EF;
 }
 
-.desc9 {
+.desc11 {
 
     margin-top: 27px;
     width: 464px;
@@ -78,7 +80,7 @@
 
 }
 
-.btn5 {
+.btn6 {
     margin-top: 24px;
     width: 268px;
     height: 60px;
@@ -90,88 +92,63 @@
     color: #FFFFFF;
     border-color: transparent;
 }
-/*=============================================MEDIA========================*/
+/*=======================================MEDIA=====================================*/
 @media screen and (max-width:1216px) {
-    .triangle3 {
-        margin-left: 710px;
+    .triangle4 {
+        margin-left: 990px;
     }
 }
 
 @media screen and (max-width:1116px) {
-    .triangle3 {
-        margin-left: 660px;
+    .triangle4 {
+        margin-left: 940px;
     }
 
-    .vac_clean3 {
+    .vac_clean4 {
         margin-left: 120px;
     }
 }
+
 @media screen and (max-width:1068px) {
-    .triangle3 {
-        margin-left: 580px;
-    }
-}
-@media screen and (max-width:940px) {
-    .triangle3 {
-        margin-left: 520px;
-    }
-    .vac_clean3 {
-        margin-left: 70px;
+    .triangle4 {
+        margin-left: 820px;
     }
 }
 
+@media screen and (max-width:940px) {
+    .triangle4 {
+        margin-left: 720px;
+    }
+    .vac_clean4 {
+        margin-left: 100px;
+    }
+    .description6 {
+        margin-left: 60px;
+    }
+}
 @media screen and (max-width:844px) {
-    .triangle3 {
-        margin-left: 460px;
+    .triangle4 {
+        margin-left: 660px;
     }
 }
 @media screen and (max-width:784px) {
-    .triangle3 {
-        margin-left: 440px;
+    .triangle4 {
+        margin-left: 630px;
     }
-    .vac_clean003 {
-        margin-top: 30px;
-        width: 330px;
-        height: 330px;
-        margin-left: -30px;
+    .vac_clean004 {
+        position: relative;
+        width: 280px;
+        height: 290px;
+        margin-left: -60px;
+        margin-top: 20px;
     }
-    .description5 {
-        position: absolute;
-        display: inline;
-        margin-left: 50px;
-        margin-top: -20px;
-    }
-    .oc {
-        width: 200px;
-        height: 57px;
-
-
-    }
-
-    .desc8 {
-        margin-top: 31px;
-        width: 437px;
-        height: 43px;
-
-    }
-
-    .desc9 {
-
-        margin-top: 27px;
-        width: 300px;
-        height: 160px;
-
-    }
-
-    .btn5 {
-        margin-top: 54px;
-        width: 268px;
-        height: 60px;
+    .description6 {
+        margin-left: 40px;
     }
 }
+
 @media screen and (max-width:768px) {
-    .triangle3 {
-        margin-left: 410px;
+    .triangle4 {
+        margin-left: 580px;
     }
 }
-

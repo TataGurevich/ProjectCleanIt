@@ -1,7 +1,8 @@
 import React from 'react';
-import office from "../../../../img/office.svg"
+import office from '../../../../../img/office.svg'
 import './office.css'
-import backgroundContext from "../../../../img/backgroundCntxtNavBar.png"
+import backgroundContext from '../../../../../img/backgroundSlider.png'
+import BookNow from "../../Book/BookNow";
 
 const Office = () => {
     return (
@@ -27,6 +28,7 @@ const Office = () => {
                     <div><a href="src/components/Main/Content#" className="check_availability2"><button className="btn5">Check availability</button></a></div>
                 </div>
             </div>
+            <BookNow/>
         </div>
     );
 };

@@ -1,7 +1,8 @@
 import React from 'react';
-import regularly from "../../../../img/regularly.svg"
-import './regurarly.css'
-import backgroundContext from "../../../../img/backgroundCntxtNavBar.png"
+import regularly from '../../../../../img/regularly.svg'
+import './regularly.css'
+import backgroundContext from '../../../../../img/backgroundSlider.png'
+import BookNow from "../../Book/BookNow";
 
 const Regularly = () => {
     return (
@@ -27,6 +28,7 @@ const Regularly = () => {
                     <div><a href="src/components/Main/Content#" className="check_availability"><button className="btn3">Check availability</button></a></div>
                 </div>
             </div>
+            <BookNow/>
         </div>
 
 

@@ -1,15 +1,15 @@
-.triangle {
+.triangle2 {
     position: absolute;
-    margin-left: 280px;
+    margin-left: 580px;
     width: 0;
     height: 0;
     border-left: 26px solid transparent;
     border-right: 26px solid transparent;
     border-bottom: 36px solid #FFD836;
     margin-top: -131px;
-}
 
-.gradient01 {
+}
+.gradient02 {
     position: absolute;
     right: 0;
     margin-top: -85px;
@@ -18,21 +18,22 @@
     /*height: 100px;*/
     overflow: hidden;
 }
-.vac_clean {
+.vac_clean2 {
+    padding-bottom: 75px;
     margin-top: 98px;
-    margin-left: 139px;
-    width: 322px;
-    height: 398px;
+    margin-left: 210px;
+    width: 371px;
+    height: 390px;
     background: transparent 0 0 no-repeat padding-box;
 
 }
-.description2 {
+.description4 {
     position: absolute;
     display: inline;
-    margin-left: 105px;
-    margin-top: -10px;
+    margin-left: 480px;
+    margin-top: -350px;
 }
-.rl {
+.dp {
     width: 227px;
     height: 57px;
     text-align: left;
@@ -43,7 +44,7 @@
 
 }
 
-.desc3 {
+.desc6 {
     margin-top: 31px;
     width: 437px;
     height: 43px;
@@ -58,7 +59,7 @@
     color: #6882EF;
 }
 
-.desc4 {
+.desc7 {
 
     margin-top: 27px;
     width: 464px;
@@ -77,7 +78,7 @@
 
 }
 
-.btn3 {
+.btn4 {
     margin-top: 24px;
     width: 268px;
     height: 60px;
@@ -89,96 +90,89 @@
     color: #FFFFFF;
     border-color: transparent;
 }
-/*========================================================MEDIA================================*/
+/*========================================================================MEDIA=============================*/
 @media screen and (max-width:1216px) {
-    .triangle {
-        margin-left: 180px;
+    .triangle2 {
+        margin-left: 450px;
     }
 }
 @media screen and (max-width:1116px) {
-    .triangle {
-        margin-left: 130px;
+    .triangle2 {
+        margin-left: 400px;
+    }
+    .vac_clean2 {
+        margin-left: 100px;
     }
 }
 @media screen and (max-width:1068px) {
-    .triangle {
-        margin-left: 155px;
-    }
-    .vac_clean {
-        margin-left: 90px;
+    .triangle2 {
+        margin-left: 370px;
     }
 }
 @media screen and (max-width:940px) {
-    .vac_clean{
-        margin-left: 45px;
+    .triangle2 {
+        margin-left: 340px;
+    }
+    .vac_clean2 {
+        margin-left: 30px;
+    }
+    .description4 {
+        margin-left: 410px;
     }
 }
+
 @media screen and (max-width:844px) {
-    .triangle {
-        margin-left: 120px;
+    .triangle2 {
+        margin-left: 290px;
     }
-    .vac_clean {
+}
+
+@media screen and (max-width:784px) {
+    .triangle2 {
+        margin-left: 270px;
+    }
+    .vac_clean002 {
         position: relative;
-        margin-left: 40px;
+        width: 320px;
+        height: 320px;
+        margin-left: 5px;
     }
-    .vac_clean001 {
-        width: 300px;
-        height: 350px;
+    .description4 {
+
+        margin-left: 20px;
+        margin-top: -20px;
     }
-    .description2 {
-        margin-left: 40px;
-    }
-    .rl {
-        width: 227px;
+    .dp {
+        width: 200px;
         height: 57px;
-        text-align: left;
-        font: normal normal bold 40px/48px Raleway;
-        letter-spacing: 0;
-        color: #6882EF;
-        text-transform: capitalize;
+
 
     }
 
-    .desc3 {
-        margin-top: 11px;
+    .desc6 {
+        margin-top: 31px;
         width: 337px;
         height: 43px;
-        text-align: left;
-        line-height: 21px;
-        font-weight: normal;
-        font-variant: normal;
-        font-style: italic;
-        font-size: 16px;
-        font-family: Raleway, serif;
-        letter-spacing: 0;
-        color: #6882EF;
     }
 
-    .desc4 {
+    .desc7 {
 
         margin-top: 27px;
-        width: 264px;
+        width: 300px;
         height: 160px;
-        text-align: left;
 
-        line-height: 21px;
-        font-weight: normal;
-        font-variant: normal;
-        font-style: normal;
-        font-size: 14px;
-        font-family: Raleway, serif;
-
-        letter-spacing: 0;
-        color: #593D3D;
 
     }
-    .btn3 {
-        margin-top: 24px;
+    .btn4 {
+        margin-top: 50px;
         width: 268px;
-        height: 60px;
-        margin-left: -20px;
+    }
+
+}
+@media screen and (max-width:768px) {
+    .triangle2 {
+        margin-left: 270px;
     }
 }
-
 
 

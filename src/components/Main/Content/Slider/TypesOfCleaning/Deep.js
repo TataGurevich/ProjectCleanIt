@@ -1,7 +1,8 @@
 import React from 'react';
 import './deep.css';
-import deep from "../../../../img/deep.svg"
-import backgroundContext from "../../../../img/backgroundCntxtNavBar.png"
+import deep from '../../../../../img/deep.svg'
+import backgroundContext from '../../../../../img/backgroundSlider.png'
+import BookNow from "../../Book/BookNow";
 
 const Deep = () => {
     return (
@@ -28,6 +29,7 @@ const Deep = () => {
                     <div><a href="src/components/Main/Content#" className="check_availability1"><button className="btn4">Check availability</button></a></div>
                 </div>
             </div>
+            <BookNow/>
         </div>
     );
 };
