@@ -1,6 +1,6 @@
 .triangle3 {
     position: absolute;
-    margin-left: 810px;
+    margin-left: 850px;
     width: 0;
     height: 0;
     border-left: 26px solid transparent;
@@ -23,7 +23,7 @@
     margin-top: 98px;
     margin-left: 250px;
     width: 322px;
-    height: 398px;
+    height: 460px;
     background: transparent 0 0 no-repeat padding-box;
 
 }

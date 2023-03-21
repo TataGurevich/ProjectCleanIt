@@ -15,14 +15,15 @@
     margin-top: -85px;
 
     /*width: 500px;*/
-    /*height: 100px;*/
+    height: 1000px;
     overflow: hidden;
+    /*margin-bottom: 100px;*/
 }
 .vac_clean {
     margin-top: 98px;
     margin-left: 139px;
     width: 322px;
-    height: 398px;
+    height: 470px;
     background: transparent 0 0 no-repeat padding-box;
 
 }
@@ -88,6 +89,7 @@
     letter-spacing: 0;
     color: #FFFFFF;
     border-color: transparent;
+
 }
 /*========================================================MEDIA================================*/
 @media screen and (max-width:1216px) {

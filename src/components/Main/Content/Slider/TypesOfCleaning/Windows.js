@@ -1,7 +1,8 @@
 import React from 'react';
-import windows from "../../../../img/windows.svg"
+import windows from '../../../../../img/windows.svg'
 import './windows.css'
-import backgroundContext from "../../../../img/backgroundCntxtNavBar.png"
+import backgroundContext from '../../../../../img/backgroundSlider.png'
+import BookNow from "../../Book/BookNow";
 
 
 const Windows = () => {
@@ -28,6 +29,7 @@ const Windows = () => {
                     <div><a href="src/components/Main/Content#" className="check_availability3"><button className="btn6">Check availability</button></a></div>
                 </div>
             </div>
+            <BookNow/>
         </div>
     );
 };

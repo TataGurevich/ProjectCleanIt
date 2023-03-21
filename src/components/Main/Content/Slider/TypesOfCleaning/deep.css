@@ -1,6 +1,6 @@
 .triangle2 {
     position: absolute;
-    margin-left: 560px;
+    margin-left: 580px;
     width: 0;
     height: 0;
     border-left: 26px solid transparent;
@@ -23,7 +23,7 @@
     margin-top: 98px;
     margin-left: 210px;
     width: 371px;
-    height: 322px;
+    height: 390px;
     background: transparent 0 0 no-repeat padding-box;
 
 }
