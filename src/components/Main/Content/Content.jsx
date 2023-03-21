@@ -3,10 +3,10 @@ import style from './Content.module.css';
 import SwiperCore, { Pagination, Navigation } from 'swiper';
 import 'swiper/swiper-bundle.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import img3 from "../../../img/Group_145.svg"
-import img4 from '../../../img/Group 217.svg'
-import img5 from '../../../img/Group 185.svg'
-import img6 from '../../../img/Group 238.svg'
+import img3 from "../../../img/regularly.svg"
+import img4 from '../../../img/deep.svg'
+import img5 from '../../../img/office.svg'
+import img6 from '../../../img/windows.svg'
 
 SwiperCore.use([Pagination, Navigation]);
 

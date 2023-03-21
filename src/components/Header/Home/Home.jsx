@@ -1,5 +1,5 @@
 import React from 'react';
-import img2 from '../../../img/Group_239.svg';
+import img2 from '../../../img/mainImg.svg';
 
 const Home = () => {
     return (
