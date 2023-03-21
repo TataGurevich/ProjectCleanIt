@@ -1,0 +1,154 @@
+.triangle4 {
+    position: absolute;
+    margin-left: 1100px;
+    width: 0;
+    height: 0;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+    border-bottom: 36px solid #FFD836;
+    margin-top: -131px;
+}
+
+.gradient04 {
+    position: absolute;
+    right:0;
+    margin-top: -85px;
+
+    /*width: 800px;*/
+    /*height: 100px;*/
+    overflow: hidden;
+
+}
+
+.vac_clean4 {
+    margin-top: 98px;
+    margin-left: 250px;
+    width: 322px;
+    height: 398px;
+    background: transparent 0 0 no-repeat padding-box;
+
+}
+.description6 {
+    position: absolute;
+    display: inline;
+    margin-left: 105px;
+    margin-top: -10px;
+}
+.ws {
+    width: 227px;
+    height: 57px;
+    text-align: left;
+    font: normal normal bold 49px/57px Raleway;
+    letter-spacing: 0;
+    color: #6882EF;
+    text-transform: capitalize;
+
+}
+
+.desc10 {
+    margin-top: 31px;
+    width: 437px;
+    height: 43px;
+
+    text-align: left;
+    line-height: 21px;
+    font-weight: normal;
+    font-variant: normal;
+    font-style: italic;
+    font-size: 16px;
+    font-family: Raleway, serif;
+    letter-spacing: 0;
+    color: #6882EF;
+}
+
+.desc11 {
+
+    margin-top: 27px;
+    width: 464px;
+    height: 160px;
+    text-align: left;
+
+    line-height: 21px;
+    font-weight: normal;
+    font-variant: normal;
+    font-style: normal;
+    font-size: 14px;
+    font-family: Raleway, serif;
+
+    letter-spacing: 0;
+    color: #593D3D;
+
+}
+
+.btn6 {
+    margin-top: 24px;
+    width: 268px;
+    height: 60px;
+    background: transparent linear-gradient(90deg, #8DA3FF 0%, #6781EF 100%) 0 0 no-repeat padding-box;
+    border-radius: 30px;
+    text-align: center;
+    font: normal normal bold 24px/29px Raleway;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    border-color: transparent;
+}
+/*=======================================MEDIA=====================================*/
+@media screen and (max-width:1216px) {
+    .triangle4 {
+        margin-left: 990px;
+    }
+}
+
+@media screen and (max-width:1116px) {
+    .triangle4 {
+        margin-left: 940px;
+    }
+
+    .vac_clean4 {
+        margin-left: 120px;
+    }
+}
+
+@media screen and (max-width:1068px) {
+    .triangle4 {
+        margin-left: 820px;
+    }
+}
+
+@media screen and (max-width:940px) {
+    .triangle4 {
+        margin-left: 720px;
+    }
+    .vac_clean4 {
+        margin-left: 100px;
+    }
+    .description6 {
+        margin-left: 60px;
+    }
+}
+@media screen and (max-width:844px) {
+    .triangle4 {
+        margin-left: 660px;
+    }
+}
+@media screen and (max-width:784px) {
+    .triangle4 {
+        margin-left: 630px;
+    }
+    .vac_clean004 {
+        position: relative;
+        width: 280px;
+        height: 290px;
+        margin-left: -60px;
+        margin-top: 20px;
+    }
+    .description6 {
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .triangle4 {
+        margin-left: 580px;
+    }
+}

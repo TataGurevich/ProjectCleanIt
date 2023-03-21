@@ -1,0 +1,177 @@
+.triangle3 {
+    position: absolute;
+    margin-left: 810px;
+    width: 0;
+    height: 0;
+    border-left: 26px solid transparent;
+    border-right: 26px solid transparent;
+    border-bottom: 36px solid #FFD836;
+    margin-top: -131px;
+}
+
+.gradient03 {
+    position: absolute;
+    right: 0;
+    margin-top: -85px;
+
+    /*width: 500px;*/
+    /*height: 100px;*/
+    overflow: hidden;
+}
+.vac_clean3 {
+    position: relative;
+    margin-top: 98px;
+    margin-left: 250px;
+    width: 322px;
+    height: 398px;
+    background: transparent 0 0 no-repeat padding-box;
+
+}
+.description5 {
+    position: absolute;
+    display: inline;
+    margin-left: 105px;
+    margin-top: -10px;
+}
+.oc {
+    width: 227px;
+    height: 57px;
+    text-align: left;
+    font: normal normal bold 49px/57px Raleway;
+    letter-spacing: 0;
+    color: #6882EF;
+    text-transform: capitalize;
+
+}
+
+.desc8 {
+    margin-top: 31px;
+    width: 437px;
+    height: 43px;
+    text-align: left;
+    line-height: 21px;
+    font-weight: normal;
+    font-variant: normal;
+    font-style: italic;
+    font-size: 16px;
+    font-family: Raleway, serif;
+    letter-spacing: 0;
+    color: #6882EF;
+}
+
+.desc9 {
+
+    margin-top: 27px;
+    width: 464px;
+    height: 160px;
+    text-align: left;
+
+    line-height: 21px;
+    font-weight: normal;
+    font-variant: normal;
+    font-style: normal;
+    font-size: 14px;
+    font-family: Raleway, serif;
+
+    letter-spacing: 0;
+    color: #593D3D;
+
+}
+
+.btn5 {
+    margin-top: 24px;
+    width: 268px;
+    height: 60px;
+    background: transparent linear-gradient(90deg, #8DA3FF 0%, #6781EF 100%) 0 0 no-repeat padding-box;
+    border-radius: 30px;
+    text-align: center;
+    font: normal normal bold 24px/29px Raleway;
+    letter-spacing: 0;
+    color: #FFFFFF;
+    border-color: transparent;
+}
+/*=============================================MEDIA========================*/
+@media screen and (max-width:1216px) {
+    .triangle3 {
+        margin-left: 710px;
+    }
+}
+
+@media screen and (max-width:1116px) {
+    .triangle3 {
+        margin-left: 660px;
+    }
+
+    .vac_clean3 {
+        margin-left: 120px;
+    }
+}
+@media screen and (max-width:1068px) {
+    .triangle3 {
+        margin-left: 580px;
+    }
+}
+@media screen and (max-width:940px) {
+    .triangle3 {
+        margin-left: 520px;
+    }
+    .vac_clean3 {
+        margin-left: 70px;
+    }
+}
+
+@media screen and (max-width:844px) {
+    .triangle3 {
+        margin-left: 460px;
+    }
+}
+@media screen and (max-width:784px) {
+    .triangle3 {
+        margin-left: 440px;
+    }
+    .vac_clean003 {
+        margin-top: 30px;
+        width: 330px;
+        height: 330px;
+        margin-left: -30px;
+    }
+    .description5 {
+        position: absolute;
+        display: inline;
+        margin-left: 50px;
+        margin-top: -20px;
+    }
+    .oc {
+        width: 200px;
+        height: 57px;
+
+
+    }
+
+    .desc8 {
+        margin-top: 31px;
+        width: 437px;
+        height: 43px;
+
+    }
+
+    .desc9 {
+
+        margin-top: 27px;
+        width: 300px;
+        height: 160px;
+
+    }
+
+    .btn5 {
+        margin-top: 54px;
+        width: 268px;
+        height: 60px;
+    }
+}
+@media screen and (max-width:768px) {
+    .triangle3 {
+        margin-left: 410px;
+    }
+}
+
