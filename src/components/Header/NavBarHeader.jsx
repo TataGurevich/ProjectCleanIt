@@ -1,5 +1,5 @@
 import React from 'react';
-import img1 from '../../img/Group_101.svg';
+import img1 from '../../img/logo.svg';
 import {Link, Route, Routes} from 'react-router-dom';
 import { book, homePage, joinOurTeam, signUp } from '../../Constants/constants';
 import Home from "./Home/Home";
