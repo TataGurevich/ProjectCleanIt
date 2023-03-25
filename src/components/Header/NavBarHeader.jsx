@@ -4,6 +4,8 @@ import {Link, Route, Routes} from 'react-router-dom';
 import { book, homePage, joinOurTeam, signUp } from '../../Constants/constants';
 import Home from "./Home/Home";
 import SignUp from "./SignUp/SignUp";
+import BookNow from "../Main/Content/Book/BookNow";
+import Join from "./Join/Join";
 
 const NavBarHeader = () => {
     return (
@@ -26,12 +28,7 @@ const NavBarHeader = () => {
                             <Link to={joinOurTeam}>Join our team</Link>
                         </li>
                         <li>
-                            {/*<Link to={signUp}>*/}
-                            {/*    <button> SignUp</button>*/}
-                            {/*</Link>*/}
-
-                                <button id={"SingUp"}> <Link to={signUp}>SignUp</Link></button>
-
+                            <button id={"SingUp"}> <Link to={signUp}>SignUp</Link></button>
                         </li>
                     </ul>
                 </nav>
@@ -39,6 +36,9 @@ const NavBarHeader = () => {
                     {['/', homePage].map(path =>
                         <Route path={path} key={path} element={<Home/>}/>)}
                     <Route path={signUp} element={<SignUp/>}/>
+                    <Route path={joinOurTeam} element={<Join/>}/>
+
+                    {/*<Route path={book} element={<BookNow/>}/>*/}
                 </Routes>
             </section>
         </div>
