@@ -12,7 +12,7 @@
     margin-left: 139px;
     width: 492px;
 }
-.cleanSection>h1{
+.cleanSection>p{
     width: 231px;
     height: 57px;
     margin-right: 996px;
@@ -20,6 +20,16 @@
     font-size: 49px;
     color: #FFFFFF;
 }
+.cleanSection>h1{
+    width: 231px;
+    height: 57px;
+    margin-right: 996px;
+    margin-top: 32px;
+    font-size: 49px;
+    color: #FFFFFF;
+
+}
+
 .cleanSection>button{
     width: 304px;
     height: 57px;
@@ -30,6 +40,7 @@
     font-size: 24px;
     text-align: left;
     padding-left: 20px;
+    cursor: pointer;
 }
 
 .bookNow p{
@@ -50,6 +61,7 @@
     justify-content: center;
     padding-top: 25px;
     padding-bottom: 25px;
+
 }
 .calendar>h1{
     width: 108px;

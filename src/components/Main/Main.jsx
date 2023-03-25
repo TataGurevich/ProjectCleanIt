@@ -1,7 +1,4 @@
 import React from 'react';
-// import NavBar from "./Content/Slider/NavBar";
-// import Content from "./Content/Content";
-// import BookNow from "./Content/Book/BookNow";
 import Regularly from "../../components/Main/Content/Slider/TypesOfCleaning/Regularly";
 import Deep from "../../components/Main/Content/Slider/TypesOfCleaning/Deep";
 import Office from "../../components/Main/Content/Slider/TypesOfCleaning/Office";
