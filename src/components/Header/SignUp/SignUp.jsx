@@ -38,7 +38,7 @@ const SignUp = () => {
                </button>
 
                <p className={style.signupLink}>
-                   No account?
+                   No account?{" "}
                    <Link to={`/${registration}`}>
                        Sign up
                    </Link>

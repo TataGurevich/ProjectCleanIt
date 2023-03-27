@@ -6,17 +6,20 @@
     height: 630px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 32px 139px 51px;
     background: #6882EF ;
 }
 .cleanSection{
-    margin-left: 139px;
+    /*margin-left: 139px;*/
     width: 492px;
 }
 .cleanSection>p{
     width: 231px;
     height: 57px;
-    margin-right: 996px;
-    margin-top: 32px;
+    /*margin-right: 996px;*/
+    /*margin-top: 32px;*/
     font-size: 49px;
     color: #FFFFFF;
 }
@@ -97,7 +100,7 @@
     height: 16px;
     color: #FFFFFF;
     font-size: 14px;
-    margin-top: 81px;
+    /*margin-top: 81px;*/
 }
 .peoples{
     width: 536px;

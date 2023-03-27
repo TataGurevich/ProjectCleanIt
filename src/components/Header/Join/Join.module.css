@@ -5,10 +5,13 @@
     height: 650px;
 }
 .form {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
     max-width: 400px;
-    max-height: 300px;
+    /*max-height: 300px;*/
     box-shadow:  -20px 20px 60px #d2d2d3,
     20px -20px 60px #ffffff;
     background: rgba(255, 255, 255, 0.43);
@@ -16,56 +19,15 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.7px);
     -webkit-backdrop-filter: blur(6.7px);
-
 }
-
-.formTitle {
+.form p {
     font-size: 1.25rem;
     line-height: 1.75rem;
     font-weight: 600;
     text-align: center;
     color: #000;
 }
-
-.inputContainer {
-    position: relative;
-}
-
-.inputContainer input, .form button {
-    outline: none;
-    border: 1px solid #e5e7eb;
-    margin: 8px 0;
-}
-
-.inputContainer input {
-    background-color: #fff;
-    padding: 1rem;
-    padding-right: 3rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    width: 300px;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
-.inputContainer span {
-    display: grid;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    place-content: center;
-}
-
-.inputContainer span svg {
-    color: #9CA3AF;
-    width: 1rem;
-    height: 1rem;
-}
-
-.submit {
+.form button{
     display: block;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
@@ -80,14 +42,33 @@
     border-radius: 0.5rem;
     text-transform: uppercase;
 }
-
-.signupLink {
-    color: #6B7280;
+.inputs_area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputs_area>label{
+    text-decoration: underline;
+}
+.inputs_area input[type="text"], input[type="email"], button{
+    background-color: #fff;
+    padding: 1rem;
+    padding-right: 3rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    text-align: center;
+    width: 300px;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
 }
-
-.signupLink a {
-    text-decoration: underline;
+.cleaningList{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+.cleaningList div{
+    margin: 0.25rem;
 }
