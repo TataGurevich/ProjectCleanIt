@@ -3,15 +3,21 @@ import style from './SignUp.module.css'
 import {Link, Route, Routes} from "react-router-dom";
 import {registration} from "../../../Constants/constants";
 import Registration from "../Registration/Registration";
-// import {SignIn} from "../../../fireBase/auth-service";
+import {loginInWeb} from "../../../FireBase/auth-service";
+
+
 
 
 const SignUp = () => {
     const [email,setEmail] = useState('')
     const [pass,setPass] = useState('')
+    const [visibilitySignIn,setVisibilitySignIn] = useState(false)
+    const visibility = () => {
+        setVisibilitySignIn(!visibilitySignIn)
+    }
     return (
-        <div className={style.pos}>
-            <form className={style.form}>
+        <div  className={style.pos}>
+            <form style={{ display: !visibilitySignIn ? 'block' : 'none' }} className={style.form}>
                 <p className={style.formTitle}>Sign in to your account</p>
                 <div className={style.inputContainer}>
                     <input onChange={e => setEmail(e.target.value)}  placeholder="Enter email" type="email"/>
@@ -36,13 +42,13 @@ const SignUp = () => {
             </svg>
           </span>
                 </div>
-                <button   className={style.submit} type="submit">
+                <button onClick={() => loginInWeb(email,pass) }  className={style.submit} type="submit">
                     Sign in
                 </button>
 
                 <p className={style.signupLink}>
                     No account?{" "}
-                    <Link to={`/${registration}`}>
+                    <Link onClick={() => visibility()} to={registration}>
                         Sign up
                     </Link>
                 </p>

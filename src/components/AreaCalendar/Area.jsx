@@ -2,6 +2,7 @@ import React from 'react';
 import Calendar from "./Calendar";
 import style from './Area.module.css'
 
+
 const Area = () => {
     return (
         <div className={style.body}>

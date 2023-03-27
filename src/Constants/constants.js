@@ -2,7 +2,7 @@ export const homePage = 'Home'
 export const signUp = 'SignUp/*'
 export const joinOurTeam = 'JoinOurTeam'
 export const book = 'Book'
-export const registration = 'registration'
+export const registration = 'registration/*'
 
 export const regularlyPage = 'regularly'
 export const deepPage = 'deep'
