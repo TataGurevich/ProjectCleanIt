@@ -11,7 +11,7 @@ const BookNow = () => {
             <div className={style.bookNow}>
                 <div className={style.cleanSection} >
                     <h1>Book now</h1>
-                    <button onClick={() => open()}>Regulary Cleaning</button>
+                    <button onClick={() => open()}>Regularly Cleaning</button>
                     {isOpen && (
                         <div className={style.cleanSection}  >
                             <button>Deep Cleaning</button>
