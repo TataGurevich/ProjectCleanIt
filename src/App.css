@@ -18,7 +18,7 @@ body {
   margin: 0;
   padding: 0;
   background: #f4f5f7;
-  /*width: 1366px;*/
+width: 1366px;
   width: 100%;
   font-family: MyRelewayMedium;
 
@@ -38,6 +38,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
 }
 .nav div {
   margin-left: 131px;
