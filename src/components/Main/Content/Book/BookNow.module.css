@@ -7,13 +7,64 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
     padding: 32px 139px 51px;
     background: #6882EF ;
 }
 .cleanSection{
     /*margin-left: 139px;*/
     width: 492px;
+}
+.cleanSectionList{
+    width: 304px;
+    padding: 10px;
+    position: relative;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.43);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.7px);
+    -webkit-backdrop-filter: blur(6.7px);
+    animation: growDown  300ms ;
+    /*ease-in-out forwards;*/
+
+}
+.cleanSectionList>button{
+    width: 304px;
+    height: 57px;
+    border: 3px solid #F9D859;
+    text-shadow: 1px 1px 2px #e3c251;
+    /*6882EF*/
+    background: #ffffff;
+    color: #F9D859;
+    font-weight: 590;
+    font-family: MyRelewayMedium;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    font-size: 24px;
+    text-align: left;
+    padding-left: 20px;
+    cursor: pointer;
+}
+/*.cleanSectionList:active{*/
+/*    animation: rotateX  300ms ease-in-out forwards;*/
+/*}*/
+@keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+    80% {
+        transform: scaleY(1.1)
+    }
+    100% {
+        transform: scaleY(1)
+    }
+}
+.calendar2{
+    position: absolute;
+    top:1700px;
+    z-index: 1;
 }
 .cleanSection>p{
     width: 231px;
@@ -33,7 +84,7 @@
 
 }
 
-.cleanSection>button{
+.cleanSection> button{
     width: 304px;
     height: 57px;
     margin-top: 22px;
@@ -62,8 +113,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding: 25px;
+    /*padding-top: 25px;*/
+    /*padding-bottom: 25px;*/
 
 }
 .calendar>h1{
@@ -84,12 +136,15 @@
 #weeks{
     width: 325px;
 }
-.calendar button{
+.dataZone button{
     width: 34px;
+    /*margin-bottom: 25px;*/
     height: 248px;
     border-radius: 16px;
     background: #6781EF;
     border: none;
+    padding: 0px;
+    margin: 0px;
 }
 .peopleSection{
     width: 536px;

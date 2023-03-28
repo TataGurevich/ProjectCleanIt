@@ -1,9 +1,10 @@
 import React from 'react';
 import img2 from '../../../img/mainImg.svg';
+import {HashLink as Link} from "react-router-hash-link";
 
 const Home = () => {
     return (
-        <div>
+        <div id={'home'}>
             <div className="description">
                 <div id="mainPart">
                     <p id="always_clean">always clean</p>
@@ -19,7 +20,8 @@ const Home = () => {
                             cleaning? Of course it is!
                         </p>
                     </div>
-                    <button id="book_now">Book now</button>
+                    <Link style={{cursor:"pointer"}} to={'/Book#bookNow'} ><button style={{cursor:"pointer"}} id="book_now">Book now</button></Link>
+
                 </div>
                 <img src={img2} alt="women cleaning" />
             </div>

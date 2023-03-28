@@ -3,6 +3,9 @@
     justify-content: center;
     align-items: center;
     height: 650px;
+    backdrop-filter: blur(6.7px);
+    -webkit-backdrop-filter: blur(6.7px);
+
 }
 .form {
     display: block;
@@ -16,9 +19,13 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.7px);
     -webkit-backdrop-filter: blur(6.7px);
+    animation: ani 0.5s forwards;
 
 }
-
+@keyframes ani {
+    0% {transform: translateX(-150%);}
+    100% {transform: translateY(0);}
+}
 .formTitle {
     font-size: 1.25rem;
     line-height: 1.75rem;
