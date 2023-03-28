@@ -61,7 +61,7 @@ const NavBarHeader = () => {
                 </nav>
                 <Home/>
                 {isOpenJoin && <Join/>}
-                {isOpenSing&&<SignUp/>}
+                {isOpenSing && <SignUp/>}
                 {/*<Routes>*/}
                 {/*    {['/', homePage].map(path =>*/}
                 {/*        <Route path={path} key={path} element={<Home/>}/>)}*/}
