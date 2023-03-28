@@ -1,8 +1,8 @@
 import React from 'react';
-import Regularly from "../../components/Main/Content/Slider/TypesOfCleaning/Regularly";
-import Deep from "../../components/Main/Content/Slider/TypesOfCleaning/Deep";
-import Office from "../../components/Main/Content/Slider/TypesOfCleaning/Office";
-import Windows from "../../components/Main/Content/Slider/TypesOfCleaning/Windows";
+import Regularly from "./Content/Cleanings/TypesOfCleaning/Regularly";
+import Deep from "./Content/Cleanings/TypesOfCleaning/Deep";
+import Office from "./Content/Cleanings/TypesOfCleaning/Office";
+import Windows from "./Content/Cleanings/TypesOfCleaning/Windows";
 import {deepPage, officePage, windowsPage} from "../../Constants/constants";
 
 const Main = (props) => {

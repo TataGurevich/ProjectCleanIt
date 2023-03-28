@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import style from './BookNow.module.css';
+import Cleaners from "./Cleaners";
 
 const BookNow = () => {
     const [isOpen,setIsOpen] = useState(false)
@@ -34,6 +35,7 @@ const BookNow = () => {
                 <div className={style.peopleSection}>
                     <p>Choose available expert and time:</p>
                     <div className={style.peoples}>
+                        <Cleaners/>
                     {/*    тут надо сделать массив с карточками людей*/}
                     {/*я начала делать для этого css .card{}*/}
                     </div>
