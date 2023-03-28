@@ -18,14 +18,14 @@
 }
 .nav_bar {
     position: relative;
-    padding-top: 79px;
+    /*padding-top: 79px;*/
     padding: 65px 139px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 .nav_bar a{
-    margin: 0px;
+    margin: 0;
     /*width: 172px;*/
     height: 29px;
     text-align: left;
