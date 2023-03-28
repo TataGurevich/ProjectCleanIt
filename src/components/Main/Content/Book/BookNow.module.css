@@ -164,6 +164,7 @@
     border-radius: 16px;
     margin-top: 14px;
     padding: 21px;
+    overflow: hidden;
 
 }
 .card{

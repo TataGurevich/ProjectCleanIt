@@ -1,13 +1,16 @@
 
 .card {
     width: 495px;
-    height: 97px;
+    /*height: 97px;*/
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 20px;
     border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 10px;
 }
 
 .card div:first-child {
@@ -28,7 +31,8 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.inf p{
+
+.inf p {
     background: #F9D859;
     margin: 0px;
     width: 26px;
@@ -38,16 +42,71 @@
     font-size: 15px;
     text-align: center;
 }
+
+.timeSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*justify-content: space-between;*/
+    /*height: 85px;*/
+    font-size: 14px;
+    width: 122px;
+    /*height: 39px;*/
+}
+
+.timeSection h4 {
+    margin-left: 10px;
+    margin-bottom: 5px;
+    width: 40px;
+    border: 1px solid black;
+}
+
 .time {
+    font-size: 14px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 85px;
-    font-size: 14px;
-
+}
+.time h3{
+    margin-top: 15px;
 }
 
-.time h4 {
-    width: 122px;
-    height: 39px;
+.dopInf{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 495px;
+    animation: scaleZ 200ms ease-in-out forwards
+}
+.dopInf>p{
+    width: 290px;
+    height: 83px;
+    font-size: 14px;
+    color: black;
+}
+.dopInf>button{
+    width: 134px;
+    height: 60px;
+    background: transparent linear-gradient(90deg, #8DA3FF 0%, #6781EF 100%) 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px;
+}
+
+@keyframes scaleZ {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.07);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
