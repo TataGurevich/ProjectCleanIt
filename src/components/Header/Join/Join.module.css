@@ -3,8 +3,11 @@
     justify-content: center;
     align-items: center;
     height: 650px;
+    backdrop-filter: blur(6.7px);
+    -webkit-backdrop-filter: blur(6.7px);
 }
 .form {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,12 +19,18 @@
     20px -20px 60px #ffffff;
     background: rgba(255, 255, 255, 0.43);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 30px rgb(0 0 0 / 32%);
     backdrop-filter: blur(6.7px);
     -webkit-backdrop-filter: blur(6.7px);
+    animation: ani 0.5s forwards;
+
+}
+@keyframes ani {
+    0% {transform: translateX(-150%);}
+    100% {transform: translateY(0);}
 }
 .form p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     line-height: 1.75rem;
     font-weight: 600;
     text-align: center;
@@ -35,7 +44,8 @@
     padding-right: 1.25rem;
     background-color: #4F46E5;
     color: #ffffff;
-    font-size: 0.875rem;
+    font-size: 1.3rem;
+    letter-spacing: .35rem;
     line-height: 1.25rem;
     font-weight: 500;
     width: 100%;
@@ -50,12 +60,14 @@
 }
 .inputs_area>label{
     text-decoration: underline;
+    font-size: 1.35rem;
+
 }
 .inputs_area input[type="text"], input[type="email"], button{
     background-color: #fff;
     padding: 1rem;
     padding-right: 3rem;
-    font-size: 0.875rem;
+    font-size: 1.5rem;
     line-height: 1.25rem;
     width: 300px;
     border-radius: 0.5rem;
@@ -68,7 +80,13 @@
     display: flex;
     flex-direction: column;
     justify-content: left;
+    font-size: 1rem;
 }
 .cleaningList div{
     margin: 0.25rem;
+    font-size: 1.3rem;
+}
+.cleaningList input[type="checkbox"]{
+    font-size: 1.3rem;
+
 }

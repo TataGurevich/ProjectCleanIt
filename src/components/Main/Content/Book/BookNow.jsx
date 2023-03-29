@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import style from './BookNow.module.css';
-import { Calendar } from 'react-calendar';
-import  'react-calendar/dist/Calendar.css';
 
 const BookNow = () => {
     const [isOpen,setIsOpen] = useState(false)
@@ -22,16 +20,13 @@ const BookNow = () => {
                         </div>)}
                     <div  style={{ display: !isOpen ? 'block' : 'none' }}>
                     <p>Choose available dates:</p>
-                    <div >
-
+                    <div className={style.calendar}>
                         <h1>March 2021</h1>
-                        <div >
-
-                            <div >
-                                    <Calendar />
-
+                        <div className={style.dataZone}>
+                            <button></button>
+                            <div id={style.weeks}>
                             </div>
-
+                            <button></button>
                         </div>
                         </div>
                     </div>
