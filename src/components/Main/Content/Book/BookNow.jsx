@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import style from './BookNow.module.css';
 import Cleaners from "./Cleaners";
+import Calendar from '../../../AreaCalendar/Calendar'
 
 const BookNow = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const [cleaning, setClean]=useState('Regulary Cleaning')
+    const [cleaning, setClean]=useState('Regularly Cleaning')
     const open = () => {
         setIsOpen(!isOpen)
     }
@@ -23,18 +24,24 @@ const BookNow = () => {
                         <button onClick={()=>chouseClean('Deep Cleaning')}>Deep Cleaning</button>
                         <button onClick={()=>chouseClean('Office Cleaning')}>Office Cleaning</button>
                         <button onClick={()=>chouseClean('Windows Cleaning')}>Windows Cleaning</button>
-                        <button onClick={()=>chouseClean('Regulary Cleaning')}>Regulary Cleaning</button>
+                        <button onClick={()=>chouseClean('Regularly Cleaning')}>Regulary Cleaning</button>
 
                     </div>)}
                 {/*<div style={{display: !isOpen ? 'block' : 'none'}}>*/}
                 <div className={style.calendar2}>
                     <p>Choose available dates:</p>
+
                     <div className={style.calendar}>
                         <h1>March 2021</h1>
+                        <Calendar/>
                         <div className={style.dataZone}>
+
                             <button></button>
+
                             <div id={style.weeks}>
+
                             </div>
+
                             <button></button>
                         </div>
                         </div>
