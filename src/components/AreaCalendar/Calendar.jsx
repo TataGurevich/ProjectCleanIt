@@ -6,11 +6,17 @@ import './Calendar.css'
 
 const MyCalendar = () => {
     const [value, onChange] = useState(new Date());
+    const[day, setDay]=useState('')
+    const Day=(value, event)=>{
+        alert(''+value)
+
+
+    }
 
     return (
         <div>
             {/*<span> Choose available dates:</span>*/}
-            <RCalendar onChange={onChange} value={value}/>
+            <RCalendar onChange={onChange} value={value} onClickDay={(value, event) => Day(value, event)}/>
 
 
         </div>

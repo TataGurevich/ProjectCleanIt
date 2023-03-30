@@ -11,14 +11,16 @@ const BookNow = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [cleaning, setClean] = useState('Regularly Cleaning')
     const [formOpen, setFormOpen] = useState(false)
+    const [orderName, setName] = useState('')
+    const [orderTime, setTime] = useState('00:00')
     const openOrder = () => {
         setFormOpen(!formOpen)
     }
     const open = () => {
         setIsOpen(!isOpen)
     }
-    const chouseClean = name => {
-        setClean(name);
+    const chouseClean = type => {
+        setClean(type);
         setIsOpen(!isOpen)
     }
     return (
@@ -42,7 +44,9 @@ const BookNow = () => {
                         <p>Choose available dates:</p>
 
                         <div className={style.calendar}>
-                            <Calendar/>
+                            {/*#bookNow > div.BookNow_cleanSection__CNaMo > div > div > div > div > div.react-calendar__viewContainer > div > div > div > div.react-calendar__month-view__days > button:nth-child(1)*/}
+                            {/*class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth"*/}
+                            <Calendar />
                         </div>
                     </div>
                 </div>
@@ -52,7 +56,8 @@ const BookNow = () => {
                         {/*<Cleaners openForm={openOrder}/>*/}
                         <div>
                             {cleaners.map((item, index) => {
-                                return <Cleaner openForm={openOrder} cleaners={item} key={index}/>
+                                return <Cleaner openForm={openOrder} name={setName} time={setTime} cleaners={item}
+                                                key={index}/>
                             })}
                         </div>
                         {/*    тут надо сделать массив с карточками людей*/}
@@ -63,8 +68,8 @@ const BookNow = () => {
 
             </div>
             {
-            formOpen && <Order close={openOrder}/>
-        }
+                formOpen && <Order close={openOrder} name={orderName} time={orderTime}/>
+            }
         </div>
 
     );

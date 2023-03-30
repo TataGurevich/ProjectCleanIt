@@ -34,6 +34,7 @@
     font-weight: 600;
     text-align: center;
     color: #000;
+    margin-bottom: 20px;
 }
 .form button{
     display: block;
@@ -55,14 +56,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
 }
 .inputs_area>label{
-    text-decoration: underline;
+    /*text-decoration: underline;*/
     font-size: 1.35rem;
+    margin-left: 10px;
 
 }
-.inputs_area input[type="text"], input[type="email"], button{
+.inputs_area input[type="text"], input[type="email"],input[type="time"], button{
     background-color: #fff;
     padding: 1rem;
     padding-right: 3rem;
@@ -74,4 +76,14 @@
     outline: none;
     border: 1px solid #e5e7eb;
     margin: 8px 0;
+}
+
+#btn_close{
+    background: transparent linear-gradient(90deg, #fd3029 0%, #fdb530 100%) 0% 0% no-repeat padding-box;;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 300px;
+    padding: 0;
 }

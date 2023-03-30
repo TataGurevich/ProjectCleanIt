@@ -8,6 +8,11 @@ const Cleaner = (props) => {
     const [formActiv, setFormActiv] = useState(false)
     const[time, setTime]=useState('')
 
+    const formStart=()=>{
+        props.openForm()
+        props.name(props.cleaners.Name)
+        props.time(time)
+    }
     const open = () => {
         setIsActive(!isActiv)
     }
@@ -33,6 +38,7 @@ const Cleaner = (props) => {
                 <div className={style.timeSection}>
                     {
                         props.cleaners.Time.map((item, index) => {
+                            // console.log(item)
                             return <h4 onClick={()=>setTime(item)}>{item}</h4>
                         })
                     }
@@ -44,7 +50,7 @@ const Cleaner = (props) => {
                     <div className={style.dopInf}>
                         <p>I am sweet and gentle, young passionate girl. I am girl with gorgeous tanned body, long legs and
                             sensitive breasts. I will clean your home properly. See you …</p>
-                        <button onClick={()=>props.openForm()}>CleanIt!</button>
+                        <button onClick={()=>formStart()}>CleanIt!</button>
                     </div>
                 )
 

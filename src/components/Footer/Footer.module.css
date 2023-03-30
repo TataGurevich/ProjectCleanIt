@@ -4,7 +4,7 @@
 }
 .footer{
     /*max-width: 1366px;*/
-    /*position: absolute;*/
+    position: absolute;
     top: 2230px;
     height: 243px;
     background: #F4F5F7;
