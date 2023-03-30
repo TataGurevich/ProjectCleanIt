@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
 import style from './cleaner.module.css'
 import {cleaners} from "../../../../Constants/constants";
+import Order from "./Order";
 
 const Cleaner = (props) => {
     const [isActiv, setIsActive] = useState(false)
+    const [formActiv, setFormActiv] = useState(false)
+    const[time, setTime]=useState('')
+
     const open = () => {
         setIsActive(!isActiv)
     }
@@ -29,7 +33,7 @@ const Cleaner = (props) => {
                 <div className={style.timeSection}>
                     {
                         props.cleaners.Time.map((item, index) => {
-                            return <h4>{item}</h4>
+                            return <h4 onClick={()=>setTime(item)}>{item}</h4>
                         })
                     }
                 </div>
@@ -40,10 +44,12 @@ const Cleaner = (props) => {
                     <div className={style.dopInf}>
                         <p>I am sweet and gentle, young passionate girl. I am girl with gorgeous tanned body, long legs and
                             sensitive breasts. I will clean your home properly. See you …</p>
-                        <button>CleanIt!</button>
+                        <button onClick={()=>props.openForm()}>CleanIt!</button>
                     </div>
                 )
+
             }
+
         </div>
     )
 };
