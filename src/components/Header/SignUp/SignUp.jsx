@@ -7,14 +7,17 @@ import Registration from "../Registration/Registration";
 
 
 const SignUp = () => {
-    const [email,setEmail] = useState('')
-    const [pass,setPass] = useState('')
+    const [email, setEmail] = useState('')
+    const [pass, setPass] = useState('')
+    const [singIn, setSingIn] = useState(true)
+
     return (
         <div className={style.pos}>
+            {singIn &&
             <form className={style.form}>
                 <p className={style.formTitle}>Sign in to your account</p>
                 <div className={style.inputContainer}>
-                    <input onChange={e => setEmail(e.target.value)}  placeholder="Enter email" type="email"/>
+                    <input onChange={e => setEmail(e.target.value)} placeholder="Enter email" type="email"/>
                     <span>
             <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -24,7 +27,7 @@ const SignUp = () => {
           </span>
                 </div>
                 <div className={style.inputContainer}>
-                    <input onChange={e => setPass(e.target.value)}  placeholder="Enter password" type="password"/>
+                    <input onChange={e => setPass(e.target.value)} placeholder="Enter password" type="password"/>
 
                     <span>
             <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -36,22 +39,26 @@ const SignUp = () => {
             </svg>
           </span>
                 </div>
-                <button   className={style.submit} type="submit">
+                <button className={style.submit} type="submit">
                     Sign in
                 </button>
 
                 <p className={style.signupLink}>
                     No account?{" "}
-                    <Link to={`/${registration}`}>
+                    <Link to={`/${registration}`} onClick={()=>setSingIn(false)}>
                         Sign up
                     </Link>
                 </p>
-            </form>
-            <Routes>
-                <Route path={registration} element={<Registration/>}/>
-            </Routes>
+            </form>}
+            {/*                 {isOpenSing && <SignUp/>}*/}
+            {!singIn&&<Registration/>}
+
+            {/*<Routes>*/}
+            {/*    <Route path={registration} element={<Registration/>}/>*/}
+            {/*</Routes>*/}
         </div>
     );
-};
+}
+    ;
 
-export default SignUp;
+    export default SignUp;

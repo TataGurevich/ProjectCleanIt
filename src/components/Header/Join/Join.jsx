@@ -14,6 +14,7 @@ const Join = () => {
                 <div className={style.inputs_area}>
                     <input placeholder="Name" type="text"/>
                     <input placeholder="Last name" type="text"/>
+                    <input placeholder="Adress" type="text"/>
                     <input placeholder="Enter email" type="email"/>
                     <label>Choose cleaning type</label>
                     <div className={style.cleaningList}>
