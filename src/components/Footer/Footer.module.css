@@ -4,6 +4,8 @@
 }
 .footer{
     /*max-width: 1366px;*/
+    position: absolute;
+    top: 2230px;
     height: 243px;
     background: #F4F5F7;
     display: flex;
@@ -15,4 +17,5 @@
 .footer div{
     font-size: 14px;
     width: 168px;
+    margin-left: 710px;
 }

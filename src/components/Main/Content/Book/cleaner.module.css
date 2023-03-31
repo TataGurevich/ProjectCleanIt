@@ -60,7 +60,9 @@
     width: 40px;
     border: 1px solid black;
 }
-
+.timeSection h4:enabled{
+    background: #F9D859;
+}
 .time {
     font-size: 14px;
     display: flex;

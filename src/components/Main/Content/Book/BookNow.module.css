@@ -3,6 +3,8 @@
     padding: 0;
 }
 .bookNow{
+    position: absolute;
+    /*bottom: 70px;*/
     height: 630px;
     display: flex;
     flex-direction: row;
@@ -62,7 +64,7 @@
     }
 }
 .calendar2{
-    position: absolute;
+    /*position: absolute;*/
     top:1700px;
     z-index: 1;
 }

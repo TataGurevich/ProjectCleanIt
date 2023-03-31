@@ -7,6 +7,22 @@ const Registration = () => {
             <form className={style.form}>
                 <p className={style.formTitle}>Sign up</p>
                 <div className={style.inputContainer}>
+                    <input placeholder="Name" type="text"/>
+
+                </div>
+                <div className={style.inputContainer}>
+                    <input placeholder="Last name" type="text"/>
+
+                </div>
+                <div className={style.inputContainer}>
+                    <input placeholder="Adress" type="text"/>
+
+                </div>
+                <div className={style.inputContainer}>
+                    <input placeholder="Phone number" type="number"/>
+
+                </div>
+                <div className={style.inputContainer}>
                     <input placeholder="Enter email" type="email"/>
                     <span>
             <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,7 +34,6 @@ const Registration = () => {
                 </div>
                 <div className={style.inputContainer}>
                     <input placeholder="Enter password" type="password"/>
-
                     <span>
             <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linejoin="round"
@@ -30,14 +45,8 @@ const Registration = () => {
           </span>
                 </div>
                 <button className={style.submit} type="submit">
-                    Sign in
+                    Sign up
                 </button>
-
-                <p className={style.signupLink}>
-                    No account?
-                        <a href="">Sign up</a>
-
-                </p>
             </form>
         </div>
     );
