@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import style from './BookNow.module.css';
 import Cleaners from "./Cleaners";
 import Calendar from '../../../AreaCalendar/Calendar'
+
 import Order from "./Order";
 import {cleaners} from "../../../../Constants/constants";
 import Cleaner from "./Cleaner";
@@ -16,6 +17,7 @@ const BookNow = () => {
     const openOrder = () => {
         setFormOpen(!formOpen)
     }
+    
     const open = () => {
         setIsOpen(!isOpen)
     }
