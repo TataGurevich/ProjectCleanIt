@@ -1,10 +1,12 @@
 import React from 'react';
 import style from "../SignUp/SignUp.module.css";
 
-const Registration = () => {
+const Registration = (props) => {
     return (
         <div className={style.pos}>
             <form className={style.form}>
+                <button id={style.btn_close} onClick={() => props.close()}></button>
+
                 <p className={style.formTitle}>Sign up</p>
                 <div className={style.inputContainer}>
                     <input placeholder="Name" type="text"/>

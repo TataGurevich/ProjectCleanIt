@@ -6,17 +6,22 @@ import Registration from "../Registration/Registration";
 // import {SignIn} from "../../../fireBase/auth-service";
 
 
-const SignUp = () => {
+const SignUp = (props) => {
 
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const [singIn, setSingIn] = useState(true)
-
+    const[singUp,setSingUp]=useState(false)
+    const handlerForms=()=>{
+        setSingUp(true)
+        setSingIn(false)
+    }
     return (
         <div className={style.pos}>
             {singIn &&
-            <form className={style.form}>
-                <p className={style.formTitle}>Sign in to your account</p>
+                <form className={style.form}>
+                    <button id={style.btn_close} onClick={() =>props.close() }></button>
+                    <p className={style.formTitle}>Sign in to your account</p>
                 <div className={style.inputContainer}>
                     <input onChange={e => setEmail(e.target.value)} placeholder="Enter email" type="email"/>
 
@@ -29,10 +34,7 @@ const SignUp = () => {
           </span>
                 </div>
                 <div className={style.inputContainer}>
-
                     <input onChange={e => setPass(e.target.value)} placeholder="Enter password" type="password"/>
-
-
                     <span>
             <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeWidth="2" strokeLinejoin="round"
@@ -43,24 +45,17 @@ const SignUp = () => {
             </svg>
           </span>
                 </div>
-
                 <button className={style.submit} type="submit">
                     Sign in
                 </button>
-
                 <p className={style.signupLink}>
                     No account?{" "}
-                    <Link to={`/${registration}`} onClick={()=>setSingIn(false)}>
+                    <Link to={`/${registration}`} onClick={()=>handlerForms()}>
                         Sign up
                     </Link>
                 </p>
             </form>}
-            {/*                 {isOpenSing && <SignUp/>}*/}
-            {!singIn&&<Registration/>}
-
-            {/*<Routes>*/}
-            {/*    <Route path={registration} element={<Registration/>}/>*/}
-            {/*</Routes>*/}
+            {singUp&&<Registration setSingUp={setSingUp} close={props.close}/>}
 
         </div>
     );

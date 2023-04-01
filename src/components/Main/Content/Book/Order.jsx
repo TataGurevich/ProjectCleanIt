@@ -1,23 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './order.module.css'
+import { format } from 'date-fns'
 const Order = (props) => {
+    const [address,setAddress]=useState("Shovei Tsion 1 ")
+
     return (
         <div className={style.pos}>
             <form className={style.form}>
-                <button id={style.btn_close} onClick={()=>props.close()}></button>
-                    <p>Your order</p>
+                <button id={style.btn_close} onClick={() => props.close()}></button>
+                <p>Your order</p>
                 <div className={style.inputs_area}>
-                    <label>Cleaner</label>
-                    <input placeholder="Name" type="text" value={props.name}/>
-                   <label>Address</label>
-                    <input placeholder="Address" type="text" value={'Shovei Tsion 1'}/>
-                    <label>Time</label>
-                    <input type={"time"} value={props.time}/>
-                    <label>Phone number</label>
-                    <input placeholder={"Phone"} type={"text"}/>
-                    <label>Email</label>
-                    <input placeholder="Enter email" type="email"/>
+                    <div>
+                        <label>Cleaner</label>
+                        <input placeholder="Name" type="text" value={props.name}/>
+                        <label>Address</label>
+                        <input placeholder="Address" type="text" value={address} onChange={event => setAddress(event.target.value)}/>
+                        <label>Time</label>
+                        <input type={"time"} value={props.time}/>
+                    </div>
+                    <div>
+                        <label>Date</label>
+                        <input type={"text"} value={format(props.day, 'PP')}/>
+                        <label>Phone number</label>
+                        <input placeholder={"Phone"} type={"text"} />
+                        <label>Email</label>
+                        <input placeholder="Enter email" type="email"/>
+                    </div>
                 </div>
+                <button>Book</button>
             </form>
         </div>
     );

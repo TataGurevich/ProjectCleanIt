@@ -5,22 +5,24 @@ import Order from "./Order";
 
 const Cleaner = (props) => {
     const [isActiv, setIsActive] = useState(false)
-    const [formActiv, setFormActiv] = useState(false)
-    const[time, setTime]=useState('')
+    const [time, setTime] = useState('')
 
-    const formStart=()=>{
-        props.openForm()
-        props.name(props.cleaners.Name)
-        props.time(time)
+    const formStart = () => {
+        if (props.day != " ") {
+
+            props.openForm()
+            props.name(props.cleaners.Name)
+            props.time(time)
+        }
+        else{
+            alert("You need to choose date first.")
+        }
     }
     const open = () => {
         setIsActive(!isActiv)
     }
     return (
         <div className={style.card} onClick={() => open()}>
-            {/*<div>*/}
-            {/*    <img src={props.cleaners.Image} alt={'photo'}/>*/}
-            {/*</div>*/}
             <div>
                 <img src={props.cleaners.Image} alt={'photo'}/>
                 <div className={style.inf}>
@@ -38,8 +40,7 @@ const Cleaner = (props) => {
                 <div className={style.timeSection}>
                     {
                         props.cleaners.Time.map((item, index) => {
-                            // console.log(item)
-                            return <h4 onClick={()=>setTime(item)}>{item}</h4>
+                            return <h4 onClick={() => setTime(item)}>{item}</h4>
                         })
                     }
                 </div>
@@ -50,7 +51,7 @@ const Cleaner = (props) => {
                     <div className={style.dopInf}>
                         <p>I am sweet and gentle, young passionate girl. I am girl with gorgeous tanned body, long legs and
                             sensitive breasts. I will clean your home properly. See you …</p>
-                        <button onClick={()=>formStart()}>CleanIt!</button>
+                        <button onClick={() => formStart()}>CleanIt!</button>
                     </div>
                 )
 
