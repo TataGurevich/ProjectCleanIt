@@ -1,12 +1,7 @@
 import React, {useState} from 'react';
 import style from './SignIn.module.css'
 import {Link, Route, Routes} from "react-router-dom";
-import {registration} from "../../../Constants/constants";
-import RegistrationForm from "../Registration/RegistrationForm";
-import SignUp from "../Registration/SignUp";
 import PageSignUp from "../Registration/PageSignUp";
-// import {SignInForm} from "../../../fireBase/auth-service";
-// import Login from './Login'
 
 
 const SignInForm = (handleClick) => {
