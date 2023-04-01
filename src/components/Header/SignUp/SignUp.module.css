@@ -8,13 +8,16 @@
 
 }
 .form {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 1rem;
     max-width: 400px;
     /*max-height: 300px;*/
     box-shadow:  -20px 20px 60px #d2d2d3,
     20px -20px 60px #ffffff;
-    background: rgba(255, 255, 255, 0.43);
+    background: rgba(255, 255, 255, 0.66);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.7px);
@@ -48,7 +51,7 @@
     background-color: #fff;
     padding: 1rem;
     padding-right: 3rem;
-    font-size: 0.875rem;
+    font-size: 1.5rem;
     line-height: 1.25rem;
     width: 300px;
     border-radius: 0.5rem;
@@ -80,10 +83,10 @@
     padding-right: 1.25rem;
     background-color: #4F46E5;
     color: #ffffff;
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.25rem;
     font-weight: 500;
-    width: 100%;
+    /*width: 100%;*/
     border-radius: 0.5rem;
     text-transform: uppercase;
 }
@@ -97,4 +100,13 @@
 
 .signupLink a {
     text-decoration: underline;
+}
+#btn_close{
+    background: transparent linear-gradient(90deg, #fd3029 0%, #fdb530 100%) 0% 0% no-repeat padding-box;;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 300px;
+    padding: 0;
 }

@@ -90,3 +90,12 @@
     font-size: 1.3rem;
 
 }
+#btn_close{
+    background: transparent linear-gradient(90deg, #fd3029 0%, #fdb530 100%) 0% 0% no-repeat padding-box;;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 300px;
+    padding: 0;
+}
