@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from "../SignUp/SignUp.module.css";
+import {Link} from "react-router-dom";
+// import {registration} from "../../../Constants/constants";
+import signIn from "../SignUp/SignIn";
+import SignIn from "../SignUp/SignIn";
 
 const Registration = () => {
+    const [signUp, setSingUp] = useState(true);
     return (
         <div className={style.pos}>
             <form className={style.form}>
@@ -47,7 +52,15 @@ const Registration = () => {
                 <button className={style.submit} type="submit">
                     Sign up
                 </button>
+                <p className={style.signupLink}>
+                    Already have an account?{" "}
+                    <Link to={`/${signIn}`} onClick={()=>setSingUp(false)}>
+                        Sign in
+                    </Link>
+                </p>
             </form>
+            {!signUp&&<SignIn/>}
+            //Маш, вот тут посмотри плиз, как сделать так чтобы предыдущая форма закрывалась
         </div>
     );
 };

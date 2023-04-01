@@ -6,7 +6,7 @@ import {Route, Routes} from 'react-router-dom';
 // import {Link, Route, Routes} from 'react-router-dom';
 import {book, homePage, joinOurTeam, signUp} from '../../Constants/constants';
 import Home from "./Home/Home";
-import SignUp from "./SignUp/SignUp";
+import SignIn from "./SignUp/SignIn";
 import BookNow from "../Main/Content/Book/BookNow";
 import Join from "./Join/Join";
 
@@ -54,18 +54,18 @@ const NavBarHeader = () => {
                             <Link onClick={()=>openJ()}>Join our team</Link>
                         </li>
                         <li>
-                            {/*<button id={"SingUp"}><Link to={signUp}>SignUp</Link></button>*/}
-                            <button id={"SingUp"} onClick={()=>openS()}><Link>SignUp</Link></button>
+                            {/*<button id={"SingUp"}><Link to={signUp}>SignIn</Link></button>*/}
+                            <button id={"SingUp"} onClick={()=>openS()}><Link>SignIn</Link></button>
                         </li>
                     </ul>
                 </nav>
                 <Home/>
                 {isOpenJoin && <Join/>}
-                {isOpenSing && <SignUp/>}
+                {isOpenSing && <SignIn/>}
                 {/*<Routes>*/}
                 {/*    {['/', homePage].map(path =>*/}
                 {/*        <Route path={path} key={path} element={<Home/>}/>)}*/}
-                {/*        <Route path={signUp} element={<SignUp/>}/>*/}
+                {/*        <Route path={signUp} element={<SignIn/>}/>*/}
                 {/*        /!*<Route path={joinOurTeam} element={<Join/>}/>*!/*/}
 
                 {/*    /!*<Route path={book} element={<BookNow/>}/>*!/*/}

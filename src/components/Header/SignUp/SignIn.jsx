@@ -6,7 +6,7 @@ import Registration from "../Registration/Registration";
 // import {SignIn} from "../../../fireBase/auth-service";
 
 
-const SignUp = () => {
+const SignIn = () => {
 
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
@@ -55,7 +55,7 @@ const SignUp = () => {
                     </Link>
                 </p>
             </form>}
-            {/*                 {isOpenSing && <SignUp/>}*/}
+            {/*                 {isOpenSing && <SignIn/>}*/}
             {!singIn&&<Registration/>}
 
             {/*<Routes>*/}
@@ -67,4 +67,4 @@ const SignUp = () => {
 }
     ;
 
-    export default SignUp;
+    export default SignIn;
