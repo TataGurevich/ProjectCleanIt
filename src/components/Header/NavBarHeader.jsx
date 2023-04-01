@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 import img1 from '../../img/logo.svg';
 import {HashLink as Link} from 'react-router-hash-link';
-import {Route, Routes} from 'react-router-dom';
-
-// import {Link, Route, Routes} from 'react-router-dom';
+// import {Route, Routes} from 'react-router-dom';
 import {book, homePage, joinOurTeam, signUp} from '../../Constants/constants';
 import Home from "./Home/Home";
-import SignIn from "./SignUp/SignIn";
-import BookNow from "../Main/Content/Book/BookNow";
 import Join from "./Join/Join";
+import PageSignIn from "./SignIn/PageSignIn";
+
 
 const NavBarHeader = () => {
     const [isOpenJoin, setIsOpenJoin] = useState(false)
@@ -53,19 +51,21 @@ const NavBarHeader = () => {
                             {/*<Link to={joinOurTeam}>Join our team</Link>*/}
                             <Link onClick={()=>openJ()}>Join our team</Link>
                         </li>
+
                         <li>
-                            {/*<button id={"SingUp"}><Link to={signUp}>SignIn</Link></button>*/}
-                            <button id={"SingUp"} onClick={()=>openS()}><Link>SignIn</Link></button>
+                            {/*<button id={"SingUp"}><Link to={signUp}>SignInForm</Link></button>*/}
+                            <button id={"SingUp"} onClick={()=>openS()}><Link >SignIn</Link></button>
                         </li>
                     </ul>
                 </nav>
                 <Home/>
                 {isOpenJoin && <Join/>}
-                {isOpenSing && <SignIn/>}
+                {isOpenSing && <PageSignIn/>}
+                {/*</Routes>*/}
                 {/*<Routes>*/}
                 {/*    {['/', homePage].map(path =>*/}
                 {/*        <Route path={path} key={path} element={<Home/>}/>)}*/}
-                {/*        <Route path={signUp} element={<SignIn/>}/>*/}
+                {/*        <Route path={signUp} element={<SignInForm/>}/>*/}
                 {/*        /!*<Route path={joinOurTeam} element={<Join/>}/>*!/*/}
 
                 {/*    /!*<Route path={book} element={<BookNow/>}/>*!/*/}
