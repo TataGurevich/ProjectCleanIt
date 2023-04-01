@@ -3,7 +3,17 @@ import style from './order.module.css'
 import { format } from 'date-fns'
 const Order = (props) => {
     const [address,setAddress]=useState("Shovei Tsion 1 ")
+const buttonSibmit=()=>{
+    if(props.forCalendar.style.color!="blue"){
+        props.forCalendar.style.color="blue";//"#6882EF";
+        props.close();
+    }
+    else{
+        alert("You chose unavailable date.")
+        props.close();
+    }
 
+}
     return (
         <div className={style.pos}>
             <form className={style.form}>
@@ -27,7 +37,7 @@ const Order = (props) => {
                         <input placeholder="Enter email" type="email"/>
                     </div>
                 </div>
-                <button>Book</button>
+                <button type={"button"} onClick={()=>buttonSibmit()}>Book</button>
             </form>
         </div>
     );

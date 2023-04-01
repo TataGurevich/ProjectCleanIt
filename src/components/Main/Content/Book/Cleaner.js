@@ -7,6 +7,13 @@ const Cleaner = (props) => {
     const [isActiv, setIsActive] = useState(false)
     const [time, setTime] = useState('')
 
+    const handlerTime=(event,item)=>{
+        event.target.style.background='#F9D859';
+        const timer = setTimeout(() => {
+            event.target.style.background='none';
+        }, 1000);
+        setTime(item)
+    }
     const formStart = () => {
         if (props.day != " ") {
 
@@ -40,7 +47,7 @@ const Cleaner = (props) => {
                 <div className={style.timeSection}>
                     {
                         props.cleaners.Time.map((item, index) => {
-                            return <h4 onClick={() => setTime(item)}>{item}</h4>
+                            return <h4 onClick={(event) => handlerTime(event,item)}>{item}</h4>
                         })
                     }
                 </div>

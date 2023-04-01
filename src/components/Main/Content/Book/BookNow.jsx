@@ -14,11 +14,19 @@ const BookNow = () => {
     const [orderName, setName] = useState('')
     const [orderTime, setTime] = useState('00:00')
     const [day, setDay]=useState(" ")
+    const[dayButton, setDayButton]=useState('')
+    const chekCalendar=(day)=>{
+    //         const chekCalendar=(day,event.target)=>{
+    //     if(day == event.target.value){
+    //             event.target.value.style.color="blue";
+
+    }
     const openOrder = () => {
         setFormOpen(!formOpen)
     }
     const Day=(value, event)=>{
-        // alert(""+value)
+        // alert(""+event.target.tagName)
+        setDayButton(event.target)
         setDay(value)
     }
     const open = () => {
@@ -54,14 +62,14 @@ const BookNow = () => {
                         <div>
                             {cleaners.map((item, index) => {
                                 return <Cleaner openForm={openOrder} name={setName} time={setTime} cleaners={item}
-                                                key={index} day={day}/>
+                                                key={index} day={day} />
                             })}
                         </div>
                     </div>
                 </div>
             </div>
             {
-                formOpen && <Order close={openOrder} name={orderName} time={orderTime} day={day}/>
+                formOpen && <Order close={openOrder} name={orderName} time={orderTime} day={day} forCalendar={dayButton}/>
             }
         </div>
     );
