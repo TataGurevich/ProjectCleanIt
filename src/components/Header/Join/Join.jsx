@@ -3,6 +3,22 @@ import style from './Join.module.css'
 
 const Join = (props) => {
     const [isActive, setIsActive] = useState(false);
+    const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState('')
+
+    function isValidEmail(email) {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+
+    const handleChangeEmail = event => {
+        if (!isValidEmail(event.target.value)) {
+            setEmailError('Email is invalid');
+        } else {
+            setEmailError(null);
+        }
+
+        setEmail(event.target.value);
+    };
     const handleClick = event => {
         // 👇️ toggle isActive state on click
         setIsActive(current => !current);
@@ -15,8 +31,14 @@ const Join = (props) => {
                 <div className={style.inputs_area}>
                     <input placeholder="Name" type="text"/>
                     <input placeholder="Last name" type="text"/>
-                    <input placeholder="Adress" type="text"/>
-                    <input placeholder="Enter email" type="email"/>
+                    <input placeholder="Address" type="text"/>
+                    <input
+                        placeholder="Enter email"
+                        type="email"
+                        value={email}
+                        onChange={handleChangeEmail}
+                    />
+                    {emailError && <h2 style={{color: 'red'}}>{emailError}</h2>}
                     <label>Choose cleaning type</label>
                     <div className={style.cleaningList}>
                         <div>
