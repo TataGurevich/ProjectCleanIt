@@ -1,8 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-.bookNow{
+
+.bookNow {
     position: absolute;
     /*bottom: 70px;*/
     height: 630px;
@@ -11,13 +12,15 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 32px 139px 51px;
-    background: #6882EF ;
+    background: #6882EF;
 }
-.cleanSection{
+
+.cleanSection {
     /*margin-left: 139px;*/
     width: 492px;
 }
-.cleanSectionList{
+
+.cleanSectionList {
     width: 304px;
     padding: 10px;
     position: relative;
@@ -27,11 +30,12 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.7px);
     -webkit-backdrop-filter: blur(6.7px);
-    animation: growDown  300ms ;
+    animation: growDown 300ms;
     /*ease-in-out forwards;*/
 
 }
-.cleanSectionList>button{
+
+.cleanSectionList > button {
     width: 304px;
     height: 57px;
     border: 3px solid #F9D859;
@@ -49,6 +53,7 @@
     padding-left: 20px;
     cursor: pointer;
 }
+
 /*.cleanSectionList:active{*/
 /*    animation: rotateX  300ms ease-in-out forwards;*/
 /*}*/
@@ -63,12 +68,14 @@
         transform: scaleY(1)
     }
 }
-.calendar2{
+
+.calendar2 {
     /*position: absolute;*/
-    top:1700px;
+    top: 1700px;
     z-index: 1;
 }
-.cleanSection>p{
+
+.cleanSection > p {
     width: 231px;
     height: 57px;
     /*margin-right: 996px;*/
@@ -76,7 +83,8 @@
     font-size: 49px;
     color: #FFFFFF;
 }
-.cleanSection>h1{
+
+.cleanSection > h1 {
     width: 231px;
     height: 57px;
     margin-right: 996px;
@@ -86,7 +94,7 @@
 
 }
 
-.cleanSection> button{
+.cleanSection > button {
     width: 304px;
     height: 57px;
     margin-top: 22px;
@@ -99,13 +107,14 @@
     cursor: pointer;
 }
 
-.bookNow p{
+.bookNow p {
     color: #FFFFFF;
     font-size: 14px;
     margin-top: 33px;
 
 }
-.calendar{
+
+.calendar {
     max-width: 492px;
     max-height: 351px;
     margin-top: 11px;
@@ -120,7 +129,8 @@
     /*padding-bottom: 25px;*/
 
 }
-.calendar>h1{
+
+.calendar > h1 {
     width: 108px;
     height: 24px;
     margin-bottom: 25px;
@@ -128,17 +138,20 @@
     font-size: 20px;
     text-align: center;
 }
-.dataZone{
+
+.dataZone {
     width: 431px;
     height: 248px;
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content: space-between;
 }
-#weeks{
+
+#weeks {
     width: 325px;
 }
-.dataZone button{
+
+.dataZone button {
     width: 34px;
     /*margin-bottom: 25px;*/
     height: 248px;
@@ -148,10 +161,12 @@
     padding: 0px;
     margin: 0px;
 }
-.peopleSection{
+
+.peopleSection {
     width: 536px;
     margin-left: 60px;
 }
+
 .peopleSection p {
     width: 225px;
     height: 16px;
@@ -159,17 +174,29 @@
     font-size: 14px;
     /*margin-top: 81px;*/
 }
-.peoples{
+
+.peoples {
     width: 536px;
     height: 468px;
     background: #FFFFFF;
     border-radius: 16px;
     margin-top: 14px;
     padding: 21px;
-    overflow: hidden;
-
+    overflow-y: scroll;
+    overflow-x: auto; /* прокрутка по горизонтали */
 }
-.card{
+
+.peoples::-webkit-scrollbar {
+    background: none;
+    width: 20px;
+}
+.peoples::-webkit-scrollbar-thumb {
+    /*background: linear-gradient(180deg, #6882EF, #8DA3FF);*/
+    background-color: #8DA3FF;
+    border-radius: 16px;
+}
+
+.card {
     width: 495px;
     height: 97px;
     border-top: 1px solid gray;

@@ -6,7 +6,6 @@ import Calendar from '../../../AreaCalendar/Calendar'
 import Order from "./Order";
 import {cleaners} from "../../../../Constants/constants";
 import Cleaner from "./Cleaner";
-// import '../../../AreaCalendar/Calendar.css'
 
 const BookNow = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -14,10 +13,22 @@ const BookNow = () => {
     const [formOpen, setFormOpen] = useState(false)
     const [orderName, setName] = useState('')
     const [orderTime, setTime] = useState('00:00')
+    const [day, setDay]=useState(" ")
+    const[dayButton, setDayButton]=useState('')
+    const chekCalendar=(day)=>{
+    //         const chekCalendar=(day,event.target)=>{
+    //     if(day == event.target.value){
+    //             event.target.value.style.color="blue";
+
+    }
     const openOrder = () => {
         setFormOpen(!formOpen)
     }
-    
+    const Day=(value, event)=>{
+        // alert(""+event.target.tagName)
+        setDayButton(event.target)
+        setDay(value)
+    }
     const open = () => {
         setIsOpen(!isOpen)
     }
@@ -28,52 +39,39 @@ const BookNow = () => {
     return (
         <div>
             <div id={'bookNow'} className={style.bookNow}>
-
                 <div className={style.cleanSection}>
                     <h1>Book now</h1>
                     <button onClick={() => open()}>{cleaning}</button>
                     {isOpen && (
-                        // <div className={style.cleanSection}  >
                         <div className={style.cleanSectionList}>
                             <button onClick={() => chouseClean('Deep Cleaning')}>Deep Cleaning</button>
                             <button onClick={() => chouseClean('Office Cleaning')}>Office Cleaning</button>
                             <button onClick={() => chouseClean('Windows Cleaning')}>Windows Cleaning</button>
                             <button onClick={() => chouseClean('Regularly Cleaning')}>Regulary Cleaning</button>
-
                         </div>)}
-                    {/*<div style={{display: !isOpen ? 'block' : 'none'}}>*/}
                     <div className={style.calendar2}>
                         <p>Choose available dates:</p>
-
                         <div className={style.calendar}>
-                            {/*#bookNow > div.BookNow_cleanSection__CNaMo > div > div > div > div > div.react-calendar__viewContainer > div > div > div > div.react-calendar__month-view__days > button:nth-child(1)*/}
-                            {/*class="react-calendar__tile react-calendar__month-view__days__day react-calendar__month-view__days__day--neighboringMonth"*/}
-                            <Calendar />
+                           <Calendar SetDay={Day}/>
                         </div>
                     </div>
                 </div>
                 <div className={style.peopleSection}>
                     <p>Choose available expert and time:</p>
                     <div className={style.peoples}>
-                        {/*<Cleaners openForm={openOrder}/>*/}
                         <div>
                             {cleaners.map((item, index) => {
                                 return <Cleaner openForm={openOrder} name={setName} time={setTime} cleaners={item}
-                                                key={index}/>
+                                                key={index} day={day} />
                             })}
                         </div>
-                        {/*    тут надо сделать массив с карточками людей*/}
-                        {/*я начала делать для этого css .card{}*/}
                     </div>
-
                 </div>
-
             </div>
             {
-                formOpen && <Order close={openOrder} name={orderName} time={orderTime}/>
+                formOpen && <Order close={openOrder} name={orderName} time={orderTime} day={day} forCalendar={dayButton}/>
             }
         </div>
-
     );
 }
 

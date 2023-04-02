@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import style from './Join.module.css'
 
-const Join = () => {
+const Join = (props) => {
     const [isActive, setIsActive] = useState(false);
     const handleClick = event => {
         // 👇️ toggle isActive state on click
@@ -10,6 +10,7 @@ const Join = () => {
     return (
         <div className={style.pos}>
             <form className={style.form}>
+                <button id={style.btn_close} onClick={() =>props.close() }></button>
                 <p>Join our team</p>
                 <div className={style.inputs_area}>
                     <input placeholder="Name" type="text"/>

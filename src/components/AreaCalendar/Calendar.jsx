@@ -4,14 +4,9 @@ import RCalendar from 'react-calendar';
 import './Calendar.css'
 
 
-const MyCalendar = () => {
-    const [value, onChange] = useState(new Date());
-
-    const[day, setDay]=useState('')
-    const Day=(value, event)=>{
-        alert(''+value)
-
-
+const MyCalendar = (props) => {    const [value, onChange] = useState(new Date());
+    const Day=(event, value)=>{
+        props.SetDay(event,value)
     }
 
     return (

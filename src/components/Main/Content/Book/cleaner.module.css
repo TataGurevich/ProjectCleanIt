@@ -60,9 +60,15 @@
     width: 40px;
     border: 1px solid black;
 }
-.timeSection h4:enabled{
-    background: #F9D859;
+
+@keyframes addColor {
+    0%   {background:none;}
+    50% {background:#F9D859;}
+    100%{background: none;}
 }
+/*.timeSection h4:focus{*/
+/*    background: #F9D859;*/
+/*}*/
 .time {
     font-size: 14px;
     display: flex;
