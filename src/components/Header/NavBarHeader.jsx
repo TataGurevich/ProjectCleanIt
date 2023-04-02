@@ -7,6 +7,7 @@ import PageSignIn from "./SignIn/PageSignIn";
 import {useAuth} from '../../hooks/use-auth'
 import {useDispatch} from 'react-redux';
 import {removeUser} from "../../store/slices/userSlice";
+// import {clientData} from "./Registration/ClientsList";
 
 
 const NavBarHeader = () => {
@@ -26,6 +27,9 @@ const NavBarHeader = () => {
         setIsOpenJoin(false)
         setIsOpenSing(false)
     }
+    // const handle = () => {
+    //     //
+    // }
 
     return (
         <div>

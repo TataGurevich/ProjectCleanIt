@@ -42,6 +42,11 @@ const SignInForm = (props) => {
         setPass(event.target.value);
     };
 
+    const handleSubmit = () => {
+        props.handleClick(email, pass);
+        props.close();
+    }
+
         return (
             <div className={style.pos}>
                 {singIn &&
@@ -86,11 +91,10 @@ const SignInForm = (props) => {
             </svg>
           </span>
                         </div>
-
                         <button
                             className={style.submit}
                             type="submit"
-                            onClick={() => props.handleClick(email, pass)}>
+                            onClick={() => handleSubmit()}>
                             Sign in
                         </button>
 

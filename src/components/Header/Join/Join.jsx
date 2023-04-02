@@ -47,10 +47,10 @@ const Join = (props) => {
 
         setEmail(event.target.value);
     };
-    const handleClick = event => {
-        // 👇️ toggle isActive state on click
-        setIsActive(current => !current);
-    };
+    // const handleClick = event => {
+    //     // 👇️ toggle isActive state on click
+    //     setIsActive(current => !current);
+    // };
     
     return (
         <div className={style.pos}>
@@ -61,7 +61,7 @@ const Join = (props) => {
                     <input placeholder="Name" type="text" onChange={(e) => setName(e.target.value)}/>
                     <input placeholder="Last name" type="text" onChange={(e) => setlastName(e.target.value)}/>
                     <input placeholder="Address" type="text" onChange={(e) => setAddress(e.target.value)}/>
-                    <input placeholder="Enter email" type="email" onChange={(e) => {handleChangeEmail}/>
+                    <input placeholder="Enter email" type="email" onChange={(e) => {handleChangeEmail()}}/>
                      {emailError && <h2 style={{color: 'red'}}>{emailError}</h2>}
                     <label>Choose cleaning type</label>
                     <div className={style.cleaningList}>

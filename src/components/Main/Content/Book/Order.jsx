@@ -32,7 +32,7 @@ const Order = (props) => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
 
-    const buttonSibmit = () => {
+    const buttonSubmit = () => {
         if (props.forCalendar.style.color !== "blue") {
             props.forCalendar.style.color = "blue";//"#6882EF";
             props.close();
