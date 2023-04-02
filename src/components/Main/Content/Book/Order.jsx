@@ -90,9 +90,9 @@ const Order = (props) => {
                     <option selected value="s1"> Deep Cleaning</option>
                     <option value="s2">Office Cleaning</option>
                     <option value="s3">Windows Cleaning</option>
-                    <option value="s4">Regulary Cleaning</option>
+                    <option value="s4">Regularly Cleaning</option>
                 </select>
-                <button type={"button"} onClick={() => buttonSibmit()}>Book</button>
+                <button type={"button"} onClick={() => buttonSubmit()}>Book</button>
             </form>
         </div>
     );
