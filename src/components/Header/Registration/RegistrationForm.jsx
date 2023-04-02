@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
 import style from "../SignIn/SignIn.module.css";
 import {clientData} from './ClientsList'
-// import {Link} from "react-router-dom";
-// import {registration} from "../../../Constants/constants";
-
 const RegistrationForm = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');

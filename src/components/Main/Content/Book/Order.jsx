@@ -43,6 +43,9 @@ const Order = (props) => {
 
     }
     const help = () => {
+        // Я сделала массив clientsList - туда попадают данные пользователя когда он регается.
+        // Соответственно если он не регается массив пустой. Этими данными тут инициализируются поля для формы.
+        // Опять же если данных нет - поля пустые. Не нужна проверка на зарегистрированность пользователя.
         clientData.map((item, index) => {
             setAddress(item.address1)
             setPhone(item.phone1)
@@ -52,7 +55,6 @@ const Order = (props) => {
     useEffect(() => {
         help()
     },[])
-
 
     return (
         <div className={style.pos}>
