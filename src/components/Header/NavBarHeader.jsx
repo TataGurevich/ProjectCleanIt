@@ -1,18 +1,19 @@
 import React, {useState} from 'react';
 import img1 from '../../img/logo.svg';
 import {HashLink as Link} from 'react-router-hash-link';
-// import {Route, Routes} from 'react-router-dom';
-import {book, homePage, joinOurTeam, signUp} from '../../Constants/constants';
 import Home from "./Home/Home";
-// import SignUp from "./SignUp/SignUp";
-import BookNow from "../Main/Content/Book/BookNow";
 import Join from "./Join/Join";
 import PageSignIn from "./SignIn/PageSignIn";
+import {useAuth} from '../../hooks/use-auth'
+import {useDispatch} from 'react-redux';
+import {removeUser} from "../../store/slices/userSlice";
 
 
 const NavBarHeader = () => {
     const [isOpenJoin, setIsOpenJoin] = useState(false)
     const[isOpenSing, setIsOpenSing]=useState(false)
+    const {isAuth} = useAuth();
+    const dispatch = useDispatch();
     const openJ = () => {
         setIsOpenSing(false)
         setIsOpenJoin(!isOpenJoin)
@@ -46,7 +47,11 @@ const NavBarHeader = () => {
                             <Link onClick={()=>openJ()}>Join our team</Link>
                         </li>
                         <li>
-                            <button id={"SingUp"} onClick={()=>openS()}><Link>SignUp</Link></button>
+                            {isAuth ?
+                                (<button id={"SingUp"} onClick={()=>dispatch(removeUser())}><Link>Logout</Link></button>)
+                                :
+                                (<button id={"SingUp"} onClick={()=>openS()}><Link>SignUp</Link></button>)
+                            }
                         </li>
                     </ul>
                 </nav>

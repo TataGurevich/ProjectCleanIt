@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-// import style from './SignUp.module.css'
 import style from "../SignIn/SignIn.module.css";
-// C:\Users\User\WebstormProjects\р\ProjectCleanIt\src\components\Header\SignIn\SignIn.module.css
 import {Link, Route, Routes} from "react-router-dom";
 import PageSignUp from "../Registration/PageSignUp";
 
@@ -47,7 +45,7 @@ const SignInForm = (props) => {
         return (
             <div className={style.pos}>
                 {singIn &&
-                    <form className={style.form}>
+                    <div className={style.form}>
                         <button id={style.btn_close} onClick={() => props.close()}></button>
                         <p className={style.formTitle}>Sign in to your account</p>
                         <div className={style.inputContainer}>
@@ -102,7 +100,7 @@ const SignInForm = (props) => {
                                 Sign up
                             </Link>
                         </p>
-                    </form>}
+                    </div>}
                 {/*{singUp&&<Registration setSingUp={setSingUp} close={props.close}/>}*/}
                 {!singIn && <PageSignUp close={props.close}/>}
             </div>
