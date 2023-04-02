@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './BookNow.module.css';
-import Cleaners from "./Cleaners";
 import Calendar from '../../../AreaCalendar/Calendar'
 
 import Order from "./Order";
-import {cleaners} from "../../../../Constants/constants";
 import Cleaner from "./Cleaner";
+import {useSelector} from "react-redux";
 
 const BookNow = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -13,19 +12,14 @@ const BookNow = () => {
     const [formOpen, setFormOpen] = useState(false)
     const [orderName, setName] = useState('')
     const [orderTime, setTime] = useState('00:00')
-    const [day, setDay]=useState(" ")
-    const[dayButton, setDayButton]=useState('')
-    const chekCalendar=(day)=>{
-    //         const chekCalendar=(day,event.target)=>{
-    //     if(day == event.target.value){
-    //             event.target.value.style.color="blue";
+    const [day, setDay] = useState(" ")
+    const [dayButton, setDayButton] = useState('')
 
-    }
+    const cleaners = useSelector(state => state.cleaners)
     const openOrder = () => {
         setFormOpen(!formOpen)
     }
-    const Day=(value, event)=>{
-        // alert(""+event.target.tagName)
+    const Day = (value, event) => {
         setDayButton(event.target)
         setDay(value)
     }
@@ -36,6 +30,7 @@ const BookNow = () => {
         setClean(type);
         setIsOpen(!isOpen)
     }
+
     return (
         <div>
             <div id={'bookNow'} className={style.bookNow}>
@@ -52,7 +47,7 @@ const BookNow = () => {
                     <div className={style.calendar2}>
                         <p>Choose available dates:</p>
                         <div className={style.calendar}>
-                           <Calendar SetDay={Day}/>
+                            <Calendar SetDay={Day}/>
                         </div>
                     </div>
                 </div>
@@ -62,14 +57,15 @@ const BookNow = () => {
                         <div>
                             {cleaners.map((item, index) => {
                                 return <Cleaner openForm={openOrder} name={setName} time={setTime} cleaners={item}
-                                                key={index} day={day} />
+                                                key={index} day={day}/>
                             })}
                         </div>
                     </div>
                 </div>
             </div>
             {
-                formOpen && <Order close={openOrder} name={orderName} time={orderTime} day={day} forCalendar={dayButton}/>
+                formOpen && <Order close={openOrder} name={orderName} time={orderTime} day={day} cleaning={cleaning}
+                                   forCalendar={dayButton}/>
             }
         </div>
     );

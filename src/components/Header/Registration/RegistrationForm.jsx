@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import style from "../SignIn/SignIn.module.css";
 
+import {clientData} from './ClientsList'
 
 const RegistrationForm = (props) => {
     const [email, setEmail] = useState('');
@@ -36,6 +37,15 @@ const RegistrationForm = (props) => {
 
         setPass(event.target.value);
     };
+    
+    const handlerSingUp=()=>{
+        props.handleClick(email, pass);
+        props.close()
+        const arr={email1:email,
+            address1:address,
+            phone1:phone};
+        clientData.push(arr)
+    }
 
     return (
         <div className={style.pos}>
@@ -104,7 +114,7 @@ const RegistrationForm = (props) => {
                 </div>
                 <button
                     className={style.submit}
-                    onClick={() => props.handleClick(email, pass)}>
+                    onClick={() => handlerSingUp()}>
                     Sign up
                 </button>
             </div>

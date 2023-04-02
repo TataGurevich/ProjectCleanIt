@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './order.module.css'
+import {clientData} from '../../../Header/Registration/ClientsList'
+
 // import {useAuth} from "../../../../hooks/use-auth";
 // Маш, я тут добавила хук по тому зареган пользователь или нет, чуть ниже сделала пример логики как должно работать
 // import {removeUser} from '../../../../store/slices/userSlice'
 // its logout - maybe for another page?
 // import {useDispatch} from 'react-redux'
 
-import { format } from 'date-fns'
+import {format} from 'date-fns'
+
 const Order = (props) => {
 // const {isAuth, email} = useAuth();
     // // наверноое надо добавить еще остальные поля, но я их не добавляла - адрес и тд
@@ -25,28 +28,46 @@ const Order = (props) => {
     // // its redirect to login
 //     )
 //     const [address,setAddress]=useState("Shovei Tsion 1 ")
-const buttonSibmit=()=>{
-    if(props.forCalendar.style.color!="blue"){
-        props.forCalendar.style.color="blue";//"#6882EF";
-        props.close();
-    }
-    else{
-        alert("You chose unavailable date.")
-        props.close();
-    }
+    const [address, setAddress] = useState('')
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
 
-}
+    const buttonSibmit = () => {
+        if (props.forCalendar.style.color !== "blue") {
+            props.forCalendar.style.color = "blue";//"#6882EF";
+            props.close();
+        } else {
+            alert("You chose unavailable date.")
+            props.close();
+        }
+
+    }
+    const help = () => {
+        // Я сделала массив clientsList - туда попадают данные пользователя когда он регается.
+        // Соответственно если он не регается массив пустой. Этими данными тут инициализируются поля для формы.
+        // Опять же если данных нет - поля пустые. Не нужна проверка на зарегистрированность пользователя.
+        clientData.map((item, index) => {
+            setAddress(item.address1)
+            setPhone(item.phone1)
+            setEmail(item.email1)
+        })
+    }
+    useEffect(() => {
+        help()
+    }, [])
+
     return (
         <div className={style.pos}>
             <form className={style.form}>
-                <button id={style.btn_close} onClick={()=>props.close()}></button>
-                    <p>Your order</p>
+                <button id={style.btn_close} onClick={() => props.close()}></button>
+                <p>Your order</p>
                 <div className={style.inputs_area}>
                     <div>
                         <label>Cleaner</label>
                         <input placeholder="Name" type="text" value={props.name}/>
                         <label>Address</label>
-                        <input placeholder="Address" type="text"/>
+                        <input placeholder="Address" type="text" value={address}
+                               onChange={(event) => setAddress(event.target.value)}/>
                         <label>Time</label>
                         <input type={"time"} value={props.time}/>
                     </div>
@@ -54,12 +75,24 @@ const buttonSibmit=()=>{
                         <label>Date</label>
                         <input type={"text"} value={format(props.day, 'PP')}/>
                         <label>Phone number</label>
-                        <input placeholder={"Phone"} type={"text"} />
+                        <input placeholder={"Phone"} type={"text"} value={phone}
+                               onChange={(event) => setPhone(event.target.value)}/>
                         <label>Email</label>
-                        <input placeholder="Enter email" type="email"/>
+                        <input placeholder="Enter email" type="email" value={email}
+                               onChange={(event) => setEmail(event.target.value)}/>
                     </div>
+                    {/*<input value={props.cleaning} type={"text"}/>*/}
+
                 </div>
-                <button type={"button"} onClick={()=>buttonSibmit()}>Book</button>
+                <label>Cleaning type</label>
+                <select name="select" >
+                    <option value="none" selected disabled hidden>{props.cleaning}</option>
+                    <option selected value="s1"> Deep Cleaning</option>
+                    <option value="s2">Office Cleaning</option>
+                    <option value="s3">Windows Cleaning</option>
+                    <option value="s4">Regulary Cleaning</option>
+                </select>
+                <button type={"button"} onClick={() => buttonSibmit()}>Book</button>
             </form>
         </div>
     );

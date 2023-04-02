@@ -65,9 +65,13 @@
     /*text-decoration: underline;*/
     font-size: 1.35rem;
     margin-left: 10px;
-
 }
-.inputs_area input[type="text"], input[type="email"],input[type="time"], button{
+.form>label{
+    font-size: 1.35rem;
+    margin-left: 10px;
+}
+
+.inputs_area input[type="text"], input[type="email"],input[type="time"], button,select,option{
     background-color: #fff;
     padding: 1rem;
     padding-right: 3rem;
@@ -80,7 +84,6 @@
     border: 1px solid #e5e7eb;
     margin: 8px 0;
 }
-
 #btn_close{
     background: transparent linear-gradient(90deg, #fd3029 0%, #fdb530 100%) 0% 0% no-repeat padding-box;;
     width: 25px;
