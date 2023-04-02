@@ -24,7 +24,7 @@ const Order = (props) => {
 //         <Redirect to="/login" />
     // // its redirect to login
 //     )
-    const [address,setAddress]=useState("Shovei Tsion 1 ")
+//     const [address,setAddress]=useState("Shovei Tsion 1 ")
 const buttonSibmit=()=>{
     if(props.forCalendar.style.color!="blue"){
         props.forCalendar.style.color="blue";//"#6882EF";
@@ -46,7 +46,7 @@ const buttonSibmit=()=>{
                         <label>Cleaner</label>
                         <input placeholder="Name" type="text" value={props.name}/>
                         <label>Address</label>
-                        <input placeholder="Address" type="text" value={address} onChange={event => setAddress(event.target.value)}/>
+                        <input placeholder="Address" type="text"/>
                         <label>Time</label>
                         <input type={"time"} value={props.time}/>
                     </div>

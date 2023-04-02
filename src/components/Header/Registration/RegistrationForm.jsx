@@ -3,28 +3,26 @@ import style from "../SignIn/SignIn.module.css";
 // import {Link} from "react-router-dom";
 // import {registration} from "../../../Constants/constants";
 
-
-const RegistrationForm = ({handleClick}) => {
+const RegistrationForm = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
 
     return (
-        // <div className={style.pos}>
+        <div className={style.pos}>
             <div className={style.form}>
+                <button id={style.btn_close} onClick={() => props.close()}></button>
                 <p className={style.formTitle}>Sign up</p>
                 <div className={style.inputContainer}>
                     <input
                         placeholder="First name"
                         type="text"/>
-
                 </div>
                 <div className={style.inputContainer}>
                     <input
                         placeholder="Last name"
                         type="text"/>
-
                 </div>
                 <div className={style.inputContainer}>
                     <input
@@ -33,7 +31,6 @@ const RegistrationForm = ({handleClick}) => {
                         value={address}
                         onChange={(e)=> setAddress(e.target.value)}
                     />
-
                 </div>
                 <div className={style.inputContainer}>
                     <input
@@ -42,7 +39,6 @@ const RegistrationForm = ({handleClick}) => {
                         value={phone}
                         onChange={(e)=> setPhone(e.target.value)}
                     />
-
                 </div>
                 <div className={style.inputContainer}>
                     <input
@@ -76,14 +72,13 @@ const RegistrationForm = ({handleClick}) => {
                         </svg>
                     </span>
                 </div>
-
                 <button
                     className={style.submit}
-                    onClick={() => handleClick(email, pass)}>
+                    onClick={() => props.handleClick(email, pass)}>
                     Sign up
                 </button>
             </div>
-        // </div>
+        </div>
     );
 };
 

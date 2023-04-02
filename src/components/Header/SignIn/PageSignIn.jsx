@@ -1,13 +1,8 @@
-
 import Login from "./Login";
-
-
-const PageSignIn = () => {
+const PageSignIn = (props) => {
     return (
         <div>
-
-            <Login />
-
+            <Login close={props.close}/>
         </div>
     )
 }

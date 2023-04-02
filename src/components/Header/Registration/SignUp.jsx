@@ -3,13 +3,9 @@ import RegistrationForm from './RegistrationForm';
 import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
 import {setUser} from "../../../store/slices/userSlice";
 import {useNavigate} from 'react-router-dom';
-
-
-
-const SignUp = () => {
+const SignUp = (props) => {
     const dispatch = useDispatch();
     const push = useNavigate();
-
     const handleSignUp = (email, password) => {
         const auth = getAuth();
         console.log(email);
@@ -27,6 +23,7 @@ const SignUp = () => {
     }
     return(
         <RegistrationForm
+            close={props.close}
             handleClick={handleSignUp}
         />
     )
