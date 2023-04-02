@@ -71,7 +71,7 @@ const SignInForm = (props) => {
                         </p>
                     </form>}
                 {/*{singUp&&<Registration setSingUp={setSingUp} close={props.close}/>}*/}
-                {!singIn && <PageSignUp close={props.close}/>}
+                {!singIn && <PageSignUp close={props.close} />}
             </div>
         );
     }

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import style from "../SignIn/SignIn.module.css";
+import {clientData} from './ClientsList'
 // import {Link} from "react-router-dom";
 // import {registration} from "../../../Constants/constants";
 
@@ -8,7 +9,17 @@ const RegistrationForm = (props) => {
     const [pass, setPass] = useState('');
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
-
+    const handlerSingUp=()=>{
+        props.handleClick(email, pass);
+        props.close()
+        const arr={email1:email,
+            address1:address,
+            phone1:phone};
+        clientData.push(arr)
+        // clientData.map((item,index)=>{
+        //     console.log(item.phone1, item.email1, item.address1)
+        // })
+    }
     return (
         <div className={style.pos}>
             <div className={style.form}>
@@ -74,7 +85,7 @@ const RegistrationForm = (props) => {
                 </div>
                 <button
                     className={style.submit}
-                    onClick={() => props.handleClick(email, pass)}>
+                    onClick={() => handlerSingUp()}>
                     Sign up
                 </button>
             </div>
