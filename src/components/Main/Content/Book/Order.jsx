@@ -33,7 +33,7 @@ const Order = (props) => {
     const [email, setEmail] = useState('');
 
     const buttonSibmit = () => {
-        if (props.forCalendar.style.color != "blue") {
+        if (props.forCalendar.style.color !== "blue") {
             props.forCalendar.style.color = "blue";//"#6882EF";
             props.close();
         } else {
@@ -54,7 +54,7 @@ const Order = (props) => {
     }
     useEffect(() => {
         help()
-    },[])
+    }, [])
 
     return (
         <div className={style.pos}>
@@ -66,7 +66,8 @@ const Order = (props) => {
                         <label>Cleaner</label>
                         <input placeholder="Name" type="text" value={props.name}/>
                         <label>Address</label>
-                        <input placeholder="Address" type="text" value={address} onChange={(event)=>setAddress(event.target.value)} />
+                        <input placeholder="Address" type="text" value={address}
+                               onChange={(event) => setAddress(event.target.value)}/>
                         <label>Time</label>
                         <input type={"time"} value={props.time}/>
                     </div>
@@ -74,11 +75,23 @@ const Order = (props) => {
                         <label>Date</label>
                         <input type={"text"} value={format(props.day, 'PP')}/>
                         <label>Phone number</label>
-                        <input placeholder={"Phone"} type={"text"} value={phone} onChange={(event)=>setPhone(event.target.value)}/>
+                        <input placeholder={"Phone"} type={"text"} value={phone}
+                               onChange={(event) => setPhone(event.target.value)}/>
                         <label>Email</label>
-                        <input placeholder="Enter email" type="email" value={email} onChange={(event)=>setEmail(event.target.value)}/>
+                        <input placeholder="Enter email" type="email" value={email}
+                               onChange={(event) => setEmail(event.target.value)}/>
                     </div>
+                    {/*<input value={props.cleaning} type={"text"}/>*/}
+
                 </div>
+                <label>Cleaning type</label>
+                <select name="select" >
+                    <option value="none" selected disabled hidden>{props.cleaning}</option>
+                    <option selected value="s1"> Deep Cleaning</option>
+                    <option value="s2">Office Cleaning</option>
+                    <option value="s3">Windows Cleaning</option>
+                    <option value="s4">Regulary Cleaning</option>
+                </select>
                 <button type={"button"} onClick={() => buttonSibmit()}>Book</button>
             </form>
         </div>
