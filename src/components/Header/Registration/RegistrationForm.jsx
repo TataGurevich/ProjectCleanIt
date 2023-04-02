@@ -16,9 +16,6 @@ const RegistrationForm = (props) => {
             address1:address,
             phone1:phone};
         clientData.push(arr)
-        // clientData.map((item,index)=>{
-        //     console.log(item.phone1, item.email1, item.address1)
-        // })
     }
     return (
         <div className={style.pos}>
