@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-// import style from './SignUp.module.css'
 import style from "../SignIn/SignIn.module.css";
-// C:\Users\User\WebstormProjects\р\ProjectCleanIt\src\components\Header\SignIn\SignIn.module.css
 import {Link, Route, Routes} from "react-router-dom";
 import PageSignUp from "../Registration/PageSignUp";
 
@@ -11,15 +9,43 @@ const SignInForm = (props) => {
         const [pass, setPass] = useState('')
         const [singIn, setSingIn] = useState(true)
         const [singUp, setSingUp] = useState(false)
+        const [emailError, setEmailError] = useState('')
+        const [passError, setPassError] = useState('')
+
         const handlerForms = () => {
             setSingUp(true)
             setSingIn(false)
         }
+    function isValidEmail(email) {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+    function isValidPassword(pass){
+        return /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(pass);
+    }
+    const handleChangeEmail = event => {
+        if (!isValidEmail(event.target.value)) {
+            setEmailError('Email is invalid');
+        } else {
+            setEmailError(null);
+        }
+
+        setEmail(event.target.value);
+    };
+
+    const handleChangePassword = event => {
+        if (!isValidPassword(event.target.value)) {
+            setPassError('Minimum 6 symbols, at least one letter and one number');
+        } else {
+            setPassError(null);
+        }
+
+        setPass(event.target.value);
+    };
 
         return (
             <div className={style.pos}>
                 {singIn &&
-                    <form className={style.form}>
+                    <div className={style.form}>
                         <button id={style.btn_close} onClick={() => props.close()}></button>
                         <p className={style.formTitle}>Sign in to your account</p>
                         <div className={style.inputContainer}>
@@ -27,9 +53,12 @@ const SignInForm = (props) => {
 
                             <input
                                 value={email}
-                                onChange={e => setEmail(e.target.value)}
+
                                 placeholder="Enter email"
-                                type="email"/>
+                                type="email"
+                                onChange={handleChangeEmail}
+                            />
+                            {emailError && <h2 style={{color: 'red'}}>{emailError}</h2>}
                             <span>
             <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -42,9 +71,11 @@ const SignInForm = (props) => {
 
                             <input
                                 value={pass}
-                                onChange={e => setPass(e.target.value)}
                                 placeholder="Enter password"
-                                type="password"/>
+                                type="password"
+                                onChange={handleChangePassword}
+                            />
+                            {passError && <h2 style={{color: 'red'}}>{passError}</h2>}
                             <span>
             <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeWidth="2" strokeLinejoin="round"
@@ -69,7 +100,7 @@ const SignInForm = (props) => {
                                 Sign up
                             </Link>
                         </p>
-                    </form>}
+                    </div>}
                 {/*{singUp&&<Registration setSingUp={setSingUp} close={props.close}/>}*/}
                 {!singIn && <PageSignUp close={props.close} />}
             </div>

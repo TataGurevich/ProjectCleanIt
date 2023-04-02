@@ -1,11 +1,43 @@
 import React, {useState} from 'react';
 import style from "../SignIn/SignIn.module.css";
+
 import {clientData} from './ClientsList'
+
 const RegistrationForm = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
+    const [emailError, setEmailError] = useState('')
+    const [passError, setPassError] = useState('')
+
+    function isValidEmail(email) {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+    function isValidPassword(pass){
+        return /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(pass);
+    }
+
+    const handleChangeEmail = event => {
+        if (!isValidEmail(event.target.value)) {
+            setEmailError('Email is invalid');
+        } else {
+            setEmailError(null);
+        }
+
+        setEmail(event.target.value);
+    };
+
+    const handleChangePassword = event => {
+        if (!isValidPassword(event.target.value)) {
+            setPassError('Minimum 6 symbols, at least one letter and one number');
+        } else {
+            setPassError(null);
+        }
+
+        setPass(event.target.value);
+    };
+    
     const handlerSingUp=()=>{
         props.handleClick(email, pass);
         props.close()
@@ -14,6 +46,7 @@ const RegistrationForm = (props) => {
             phone1:phone};
         clientData.push(arr)
     }
+
     return (
         <div className={style.pos}>
             <div className={style.form}>
@@ -50,8 +83,9 @@ const RegistrationForm = (props) => {
                         placeholder="Enter email"
                         type="email"
                         value={email}
-                        onChange={(e)=> setEmail(e.target.value)}
+                        onChange={handleChangeEmail}
                     />
+                    {emailError && <h2 style={{color: 'red'}}>{emailError}</h2>}
                     <span>
                         <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -66,8 +100,9 @@ const RegistrationForm = (props) => {
                         placeholder="Enter password"
                         type="password"
                         value={pass}
-                        onChange={(e)=> setPass(e.target.value)}
+                        onChange={handleChangePassword}
                     />
+                    {passError && <h2 style={{color: 'red'}}>{passError}</h2>}
                     <span>
                         <svg stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-width="2" stroke-linejoin="round"

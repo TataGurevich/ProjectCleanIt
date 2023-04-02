@@ -11,6 +11,7 @@ const Join = (props) => {
     const [address, setAddress] = useState('')
     const [email, setEmail] = useState('')
     const [cleanindType, setCleanindType] = useState('Regulary cleaning expert')
+    const [emailError, setEmailError] = useState('')
 
     const dispatch = useDispatch();
     const cleaners = useSelector(state => state.cleaners)
@@ -33,6 +34,24 @@ const Join = (props) => {
 
         props.close()
     }
+    
+     function isValidEmail(email) {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+     const handleChangeEmail = event => {
+        if (!isValidEmail(event.target.value)) {
+            setEmailError('Email is invalid');
+        } else {
+            setEmailError(null);
+        }
+
+        setEmail(event.target.value);
+    };
+    const handleClick = event => {
+        // 👇️ toggle isActive state on click
+        setIsActive(current => !current);
+    };
+    
     return (
         <div className={style.pos}>
             <form className={style.form}>
@@ -42,7 +61,8 @@ const Join = (props) => {
                     <input placeholder="Name" type="text" onChange={(e) => setName(e.target.value)}/>
                     <input placeholder="Last name" type="text" onChange={(e) => setlastName(e.target.value)}/>
                     <input placeholder="Address" type="text" onChange={(e) => setAddress(e.target.value)}/>
-                    <input placeholder="Enter email" type="email" onChange={(e) => setEmail(e.target.value)}/>
+                    <input placeholder="Enter email" type="email" onChange={(e) => {handleChangeEmail}/>
+                     {emailError && <h2 style={{color: 'red'}}>{emailError}</h2>}
                     <label>Choose cleaning type</label>
                     <div className={style.cleaningList}>
                         <select name="select" onChange={(e) => setCleanindType(e.target.value)}>
