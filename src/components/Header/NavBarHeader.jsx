@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import img1 from '../../img/logo.svg';
 import {HashLink as Link} from 'react-router-hash-link';
-import {Route, Routes} from 'react-router-dom';
-
-// import {Link, Route, Routes} from 'react-router-dom';
+// import {Route, Routes} from 'react-router-dom';
 import {book, homePage, joinOurTeam, signUp} from '../../Constants/constants';
 import Home from "./Home/Home";
-import SignUp from "./SignUp/SignUp";
+// import SignUp from "./SignUp/SignUp";
 import BookNow from "../Main/Content/Book/BookNow";
 import Join from "./Join/Join";
+import PageSignIn from "./SignIn/PageSignIn";
+
 
 const NavBarHeader = () => {
     const [isOpenJoin, setIsOpenJoin] = useState(false)
@@ -51,8 +51,10 @@ const NavBarHeader = () => {
                     </ul>
                 </nav>
                 <Home/>
+                {/*{isOpenJoin && <Join close={close}/>}*/}
+                {/*{isOpenSing && <SignUp close={close}/>}*/}
                 {isOpenJoin && <Join close={close}/>}
-                {isOpenSing && <SignUp close={close}/>}
+                {isOpenSing && <PageSignIn close={close}/>}
             </section>
         </div>
     );

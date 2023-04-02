@@ -40,10 +40,7 @@ const Join = (props) => {
                         join
                     </button>
                 </div>
-
-
             </form>
-
         </div>
     );
 };
