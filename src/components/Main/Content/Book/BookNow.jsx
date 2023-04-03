@@ -5,11 +5,13 @@ import Calendar from '../../../AreaCalendar/Calendar'
 import Order from "./Order";
 import Cleaner from "./Cleaner";
 import {useSelector} from "react-redux";
+import OrderDone from "./OrderDone";
 
 const BookNow = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [cleaning, setClean] = useState('Regularly Cleaning')
     const [formOpen, setFormOpen] = useState(false)
+    const [formOrderDone, setformOrderDone]=useState(false)
     const [orderName, setName] = useState('')
     const [orderTime, setTime] = useState('00:00')
     const [day, setDay] = useState(" ")
@@ -56,7 +58,7 @@ const BookNow = () => {
                     <div className={style.peoples}>
                         <div>
                             {cleaners.map((item, index) => {
-                                return <Cleaner openForm={openOrder} name={setName} time={setTime} cleaners={item}
+                                return <Cleaner openForm={openOrder} orderDone={setformOrderDone} name={setName} time={setTime} cleaners={item}
                                                 key={index} day={day}/>
                             })}
                         </div>
@@ -65,7 +67,11 @@ const BookNow = () => {
             </div>
             {
                 formOpen && <Order close={openOrder} name={orderName} time={orderTime} day={day} cleaning={cleaning}
-                                   forCalendar={dayButton}/>
+                                   forCalendar={dayButton} openDobe={setformOrderDone}/>
+            }
+            {
+                formOrderDone && <OrderDone close={setformOrderDone} name={orderName} time={orderTime} day={day} cleaning={cleaning}/>
+
             }
         </div>
     );

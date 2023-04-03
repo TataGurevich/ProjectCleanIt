@@ -1,40 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import style from './order.module.css'
 import {clientData} from '../../../Header/Registration/ClientsList'
-
-// import {useAuth} from "../../../../hooks/use-auth";
-// Маш, я тут добавила хук по тому зареган пользователь или нет, чуть ниже сделала пример логики как должно работать
-// import {removeUser} from '../../../../store/slices/userSlice'
-// its logout - maybe for another page?
-// import {useDispatch} from 'react-redux'
-
 import {format} from 'date-fns'
 
 const Order = (props) => {
-// const {isAuth, email} = useAuth();
-    // // наверноое надо добавить еще остальные поля, но я их не добавляла - адрес и тд
-//     const dispatch = useDispatch();
-// return  isAuth ? (
-//         <div>
-//
-// // (тут надо написать код чтчо будет если пользователь зареган, все вейлю должны идти из ее внесенных данных)
-//  //   (ниже кнопка для разлогирования)
-//             <button
-//                 onClick={()=> dispatch(removeUser())}
-//             >Log out from {email}</button>
-//         </div>
-//     ) : (
-//         <Redirect to="/login" />
-    // // its redirect to login
-//     )
-//     const [address,setAddress]=useState("Shovei Tsion 1 ")
     const [address, setAddress] = useState('')
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
+    const cleanings = ['Deep Cleaning','Office Cleaning','Windows Cleaning','Regularly Cleaning'];
 
     const buttonSubmit = () => {
         if (props.forCalendar.style.color !== "blue") {
             props.forCalendar.style.color = "blue";//"#6882EF";
+            props.openDobe(true)
             props.close();
         } else {
             alert("You chose unavailable date.")
@@ -43,9 +21,6 @@ const Order = (props) => {
 
     }
     const help = () => {
-        // Я сделала массив clientsList - туда попадают данные пользователя когда он регается.
-        // Соответственно если он не регается массив пустой. Этими данными тут инициализируются поля для формы.
-        // Опять же если данных нет - поля пустые. Не нужна проверка на зарегистрированность пользователя.
         clientData.map((item, index) => {
             setAddress(item.address1)
             setPhone(item.phone1)
@@ -81,16 +56,14 @@ const Order = (props) => {
                         <input placeholder="Enter email" type="email" value={email}
                                onChange={(event) => setEmail(event.target.value)}/>
                     </div>
-                    {/*<input value={props.cleaning} type={"text"}/>*/}
-
                 </div>
                 <label>Cleaning type</label>
-                <select name="select" >
-                    <option value="none" selected disabled hidden>{props.cleaning}</option>
-                    <option selected value="s1"> Deep Cleaning</option>
-                    <option value="s2">Office Cleaning</option>
-                    <option value="s3">Windows Cleaning</option>
-                    <option value="s4">Regularly Cleaning</option>
+                <select>
+                    {
+                        cleanings.map((item,index)=>{
+                            return item==props.cleaning? <option selected>{item}</option>:<option>{item}</option>
+                        })
+                    }
                 </select>
                 <button type={"button"} onClick={() => buttonSubmit()}>Book</button>
             </form>
