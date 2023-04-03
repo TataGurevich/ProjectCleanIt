@@ -6,24 +6,38 @@ import Order from "./Order";
 import Cleaner from "./Cleaner";
 import {useSelector} from "react-redux";
 import OrderDone from "./OrderDone";
+import NotOrder from "./NotOrder";
 
 const BookNow = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [cleaning, setClean] = useState('Regularly Cleaning')
     const [formOpen, setFormOpen] = useState(false)
-    const [formOrderDone, setformOrderDone]=useState(false)
+    const [formOrderDone, setformOrderDone] = useState(false)
     const [orderName, setName] = useState('')
     const [orderTime, setTime] = useState('00:00')
     const [day, setDay] = useState(" ")
     const [dayButton, setDayButton] = useState('')
-
+    const [ordersArr, setOrdersArr] = useState([]);
+    const [order, setOrder] = useState({})
     const cleaners = useSelector(state => state.cleaners)
+    const[error, setError]=useState(false)
     const openOrder = () => {
         setFormOpen(!formOpen)
     }
     const Day = (value, event) => {
         setDayButton(event.target)
         setDay(value)
+    }
+    const addOrger = (email, day, time) => {
+        let temp = [...ordersArr];
+        let order = {
+            day: day,
+            email: email,
+            time: time
+        }
+        temp.push(order)
+        setOrdersArr(temp)
+        console.log(ordersArr)
     }
     const open = () => {
         setIsOpen(!isOpen)
@@ -58,7 +72,8 @@ const BookNow = () => {
                     <div className={style.peoples}>
                         <div>
                             {cleaners.map((item, index) => {
-                                return <Cleaner openForm={openOrder} orderDone={setformOrderDone} name={setName} time={setTime} cleaners={item}
+                                return <Cleaner openForm={openOrder} orderDone={setformOrderDone} name={setName}
+                                                time={setTime} cleaners={item}
                                                 key={index} day={day}/>
                             })}
                         </div>
@@ -66,12 +81,18 @@ const BookNow = () => {
                 </div>
             </div>
             {
-                formOpen && <Order close={openOrder} name={orderName} time={orderTime} day={day} cleaning={cleaning}
-                                   forCalendar={dayButton} openDobe={setformOrderDone}/>
+                formOpen &&
+                <Order close={openOrder} add={addOrger} name={orderName} time={orderTime} day={day} cleaning={cleaning}
+                       forCalendar={dayButton} error={setError}openDobe={setformOrderDone} order={setOrder}/>
             }
             {
-                formOrderDone && <OrderDone close={setformOrderDone} name={orderName} time={orderTime} day={day} cleaning={cleaning}/>
-
+                formOrderDone && order.P &&
+                <OrderDone close={setformOrderDone} order={order} name={orderName} time={orderTime} day={day}
+                           cleaning={cleaning} />
+            }
+            {
+                error &&
+                <NotOrder close={setError}/>
             }
         </div>
     );

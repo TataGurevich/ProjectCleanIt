@@ -6,14 +6,26 @@ import {format} from 'date-fns'
 const Order = (props) => {
     const [address, setAddress] = useState('')
     const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
-    const cleanings = ['Deep Cleaning','Office Cleaning','Windows Cleaning','Regularly Cleaning'];
+    const [email, setEmail] = useState(' ');
+    const cleanings = ['Deep Cleaning', 'Office Cleaning', 'Windows Cleaning', 'Regularly Cleaning'];
 
     const buttonSubmit = () => {
         if (props.forCalendar.style.color !== "blue") {
-            props.forCalendar.style.color = "blue";//"#6882EF";
-            props.openDobe(true)
-            props.close();
+            if (address && phone && email) {
+
+                props.forCalendar.style.color = "blue";//"#6882EF";
+                props.openDobe(true)
+                props.error(false)
+                props.add(email, props.day, props.time)
+                props.order({E: email, P: phone, A: address})
+                props.close();
+            }
+            else {
+                props.error(true)
+                props.close();
+
+
+            }
         } else {
             alert("You chose unavailable date.")
             props.close();
@@ -60,8 +72,8 @@ const Order = (props) => {
                 <label>Cleaning type</label>
                 <select>
                     {
-                        cleanings.map((item,index)=>{
-                            return item==props.cleaning? <option selected>{item}</option>:<option>{item}</option>
+                        cleanings.map((item, index) => {
+                            return item == props.cleaning ? <option selected>{item}</option> : <option>{item}</option>
                         })
                     }
                 </select>
